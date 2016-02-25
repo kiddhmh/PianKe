@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "PKLaunchingViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +16,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = window;
+    
+    PKLaunchingViewController *launchVC = [[PKLaunchingViewController alloc] init];
+    
+    self.window.rootViewController = launchVC;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
