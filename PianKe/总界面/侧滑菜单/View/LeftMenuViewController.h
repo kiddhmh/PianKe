@@ -1,5 +1,5 @@
 //
-//  GoodPorductsViewController.h
+//  LeftMenuViewController.h
 //  PianKe
 //
 //  Created by 胡明昊 on 16/2/25.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GoodPorductsViewController : UIViewController
-
+@interface LeftMenuViewController : UIViewController
 
 @end

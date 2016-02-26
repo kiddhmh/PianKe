@@ -72,7 +72,7 @@
     //让背景动起来，先加载完毕，将要出现的时候再执行动画
     
     //设置动画效果
-    [UIView animateWithDuration:4.0 animations:^{
+    [UIView animateWithDuration:3.0 animations:^{
         
         CGRect rect = self.launchingBackgroundImageView.frame;
         rect.origin = CGPointMake(-100, -100);
