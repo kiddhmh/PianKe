@@ -12,6 +12,8 @@
 #import "LoginView.h"
 #import "PlayMusicView.h"
 #import "AllControllersTool.h"
+#import "UIColor+Extension.h"
+#import "SideMenuCellTableViewCell.h"
 #define VIEWWIDTH self.view.frame.size.width
 #define VIEWHEIGHT self.view.frame.size.height
 @interface LeftMenuViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -21,9 +23,15 @@
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSArray *titleArray;
 
+/**
+ *  Cell上的图片数组
+ */
+@property (nonatomic,strong) NSArray *cellImages;
+
 @end
 
 @implementation LeftMenuViewController
+
 
 #pragma mark -
 #pragma mark - 懒加载
@@ -46,6 +54,14 @@
     return _titleArray;
 }
 
+- (NSArray *)cellImages
+{
+    if (!_cellImages) {
+        _cellImages = [[NSArray alloc] init];
+    }
+    return _cellImages;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,18 +70,20 @@
     
     self.titleArray = @[@"首页",@"电台",@"阅读",@"社区",@"碎片",@"良品",@"设置"];
     
+    self.cellImages = @[@"home",@"radio",@"reading",@"peoples",@"snow",@"good",@"setting"];
+    
     self.tableView.tableFooterView = [[UIView alloc] init];
-    self.tableView.backgroundColor = [UIColor darkGrayColor];
+    self.tableView.backgroundColor = [UIColor colorWithHexString:@"#303030"];
     [self.view addSubview:self.tableView];
     
     //设置头部视图
     UIView *headerView = [[LoginView alloc] initWithFrame:CGRectMake(0, 0,VIEWWIDTH * 0.75,VIEWHEIGHT * 0.3)];
-    headerView.backgroundColor = [UIColor orangeColor];
+    [headerView setBackgroundColor:[UIColor colorWithHexString:@"#303030"]];
     [self.view addSubview:headerView];
     
     //设置尾部播放音乐视图
-    PlayMusicView *playMusic = [[PlayMusicView alloc] initWithFrame:CGRectMake(0, VIEWHEIGHT * 0.92, VIEWWIDTH / 0.75, VIEWHEIGHT * 0.08)];
-    playMusic.backgroundColor = [UIColor orangeColor];
+    PlayMusicView *playMusic = [[PlayMusicView alloc] initWithFrame:CGRectMake(0, VIEWHEIGHT * 0.9, VIEWWIDTH / 0.75, VIEWHEIGHT * 0.1)];
+    playMusic.backgroundColor = RGB(28, 28, 28);
     [self.view addSubview:playMusic];
 }
 
@@ -84,15 +102,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *ID = @"cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
-    cell.textLabel.text = self.titleArray[indexPath.row];
-    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.backgroundColor = [UIColor darkGrayColor];
+    SideMenuCellTableViewCell *cell = [SideMenuCellTableViewCell cellWith:tableView];
+    cell.title = self.titleArray[indexPath.row];
+    cell.iconImage = self.cellImages[indexPath.row];
     
     return cell;
 }
@@ -105,14 +118,16 @@
     //点击对应的cell切换对应的视图控制器
     [AllControllersTool createViewControllerWithIndex:indexPath.row];
     
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.backgroundColor = [UIColor lightGrayColor];
+    //遍历所有cell，将选中的设为白色，没选中的设为灰色
+    for (NSUInteger index = 0; index < self.titleArray.count; index ++) {
+        SideMenuCellTableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+        if (index == indexPath.row) { //选中cell
+            cell.TextColor = [UIColor whiteColor];
+        }else { //非选中的cell
+            cell.TextColor = [UIColor lightGrayColor];
+        }
+    }
     
-    //设置点击cell取消选中
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        cell.backgroundColor = [UIColor darkGrayColor];
-    });
 }
 
 

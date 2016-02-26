@@ -1,0 +1,19 @@
+//
+//  PKPrefixHeader.pch
+//  PianKe
+//
+//  Created by 胡明昊 on 16/2/26.
+//  Copyright © 2016年 CMCC. All rights reserved.
+//
+
+#ifndef PKPrefixHeader_pch
+#define PKPrefixHeader_pch
+
+/*
+ RGBAlpha(255, 255, 255)
+ */
+#define RGB(r, g, b)                [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PKPrefixHeader_pch */

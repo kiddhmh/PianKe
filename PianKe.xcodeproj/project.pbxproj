@@ -12,6 +12,10 @@
 		A264D4881C7FEE2400E11066 /* ReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A264D4861C7FEE2400E11066 /* ReadingViewController.m */; };
 		A264D48E1C7FEE3800E11066 /* UIBarButtonItem+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = A264D48B1C7FEE3800E11066 /* UIBarButtonItem+Helper.m */; };
 		A264D48F1C7FEE3800E11066 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A264D48D1C7FEE3800E11066 /* UIColor+Extension.m */; };
+		A264D4951C80257300E11066 /* SearchBar_textField.m in Sources */ = {isa = PBXBuildFile; fileRef = A264D4941C80257300E11066 /* SearchBar_textField.m */; };
+		A264D4981C80290400E11066 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = A264D4971C80290400E11066 /* UIView+Frame.m */; };
+		A264D49C1C80451200E11066 /* SideMenuCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A264D49A1C80451200E11066 /* SideMenuCellTableViewCell.m */; };
+		A264D49D1C80451200E11066 /* SideMenuCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A264D49B1C80451200E11066 /* SideMenuCellTableViewCell.xib */; };
 		A27451201C7EF46C009108B1 /* Carousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A274511F1C7EF46C009108B1 /* Carousel.m */; };
 		A27451381C7F1C03009108B1 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = A274512B1C7F1C03009108B1 /* TAAbstractDotView.m */; };
 		A27451391C7F1C03009108B1 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = A274512D1C7F1C03009108B1 /* TAAnimatedDotView.m */; };
@@ -128,6 +132,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A24D729F1C8090A500FFB3CF /* PKPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKPrefixHeader.pch; sourceTree = "<group>"; };
 		A264D47E1C7FEE0D00E11066 /* HMHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHNavigationController.h; sourceTree = "<group>"; };
 		A264D47F1C7FEE0D00E11066 /* HMHNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHNavigationController.m; sourceTree = "<group>"; };
 		A264D4821C7FEE2400E11066 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -138,6 +143,13 @@
 		A264D48B1C7FEE3800E11066 /* UIBarButtonItem+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Helper.m"; sourceTree = "<group>"; };
 		A264D48C1C7FEE3800E11066 /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
 		A264D48D1C7FEE3800E11066 /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
+		A264D4931C80257300E11066 /* SearchBar_textField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBar_textField.h; sourceTree = "<group>"; };
+		A264D4941C80257300E11066 /* SearchBar_textField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBar_textField.m; sourceTree = "<group>"; };
+		A264D4961C80290400E11066 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		A264D4971C80290400E11066 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		A264D4991C80451200E11066 /* SideMenuCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuCellTableViewCell.h; sourceTree = "<group>"; };
+		A264D49A1C80451200E11066 /* SideMenuCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuCellTableViewCell.m; sourceTree = "<group>"; };
+		A264D49B1C80451200E11066 /* SideMenuCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuCellTableViewCell.xib; sourceTree = "<group>"; };
 		A274511E1C7EF46C009108B1 /* Carousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Carousel.h; sourceTree = "<group>"; };
 		A274511F1C7EF46C009108B1 /* Carousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Carousel.m; sourceTree = "<group>"; };
 		A274512A1C7F1C03009108B1 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
@@ -187,8 +199,8 @@
 		A274515E1C7F1D9E009108B1 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		A274515F1C7F1D9E009108B1 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		A27451601C7F1D9E009108B1 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		A27451731C7F258A009108B1 /* IDMPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IDMPhotoBrowser.bundle; sourceTree = "<group>"; };
-		A27451751C7F258A009108B1 /* JGProgressHUD Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "JGProgressHUD Resources.bundle"; sourceTree = "<group>"; };
+		A27451731C7F258A009108B1 /* IDMPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = IDMPhotoBrowser.bundle; path = ../../IDMPhotoBrowser.bundle; sourceTree = "<group>"; };
+		A27451751C7F258A009108B1 /* JGProgressHUD Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "JGProgressHUD Resources.bundle"; path = "../../JGProgressHUD Resources.bundle"; sourceTree = "<group>"; };
 		A27451C61C7F2E2E009108B1 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
 		A27451C71C7F2E2E009108B1 /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
 		A27451C81C7F2E2E009108B1 /* MJExtensionConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConst.m; sourceTree = "<group>"; };
@@ -260,10 +272,10 @@
 		A27452331C7F4207009108B1 /* PlayMusicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayMusicView.m; sourceTree = "<group>"; };
 		A2754CF41C7E9670000B5CA0 /* PianKe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PianKe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2754CF81C7E9670000B5CA0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A2754CFA1C7E9670000B5CA0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A2754CFB1C7E9670000B5CA0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A2754CFA1C7E9670000B5CA0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
+		A2754CFB1C7E9670000B5CA0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		A2754D011C7E9670000B5CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A2754D031C7E9670000B5CA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = PianKe/Assets.xcassets; sourceTree = "<group>"; };
+		A2754D031C7E9670000B5CA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		A2754D061C7E9670000B5CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2754D081C7E9670000B5CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2754D0D1C7E9670000B5CA0 /* PianKeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PianKeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -365,6 +377,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A24D729C1C808DBF00FFB3CF /* 其它 */ = {
+			isa = PBXGroup;
+			children = (
+				A2754D031C7E9670000B5CA0 /* Assets.xcassets */,
+				A27451731C7F258A009108B1 /* IDMPhotoBrowser.bundle */,
+				A27451751C7F258A009108B1 /* JGProgressHUD Resources.bundle */,
+				A2754CFA1C7E9670000B5CA0 /* AppDelegate.h */,
+				A2754CFB1C7E9670000B5CA0 /* AppDelegate.m */,
+				A2754D001C7E9670000B5CA0 /* Main.storyboard */,
+				A24D729F1C8090A500FFB3CF /* PKPrefixHeader.pch */,
+			);
+			path = "其它";
+			sourceTree = "<group>";
+		};
 		A264D47D1C7FEE0D00E11066 /* 基类 */ = {
 			isa = PBXGroup;
 			children = (
@@ -617,10 +643,15 @@
 		A274522B1C7F3366009108B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A264D4931C80257300E11066 /* SearchBar_textField.h */,
+				A264D4941C80257300E11066 /* SearchBar_textField.m */,
 				A274522C1C7F34E5009108B1 /* LoginView.h */,
 				A274522D1C7F34E5009108B1 /* LoginView.m */,
 				A27452321C7F4207009108B1 /* PlayMusicView.h */,
 				A27452331C7F4207009108B1 /* PlayMusicView.m */,
+				A264D4991C80451200E11066 /* SideMenuCellTableViewCell.h */,
+				A264D49A1C80451200E11066 /* SideMenuCellTableViewCell.m */,
+				A264D49B1C80451200E11066 /* SideMenuCellTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -628,9 +659,6 @@
 		A2754CEB1C7E966F000B5CA0 = {
 			isa = PBXGroup;
 			children = (
-				A2754D031C7E9670000B5CA0 /* Assets.xcassets */,
-				A27451731C7F258A009108B1 /* IDMPhotoBrowser.bundle */,
-				A27451751C7F258A009108B1 /* JGProgressHUD Resources.bundle */,
 				A2754CF61C7E9670000B5CA0 /* PianKe */,
 				A2754D101C7E9670000B5CA0 /* PianKeTests */,
 				A2754D1B1C7E9670000B5CA0 /* PianKeUITests */,
@@ -651,14 +679,12 @@
 		A2754CF61C7E9670000B5CA0 /* PianKe */ = {
 			isa = PBXGroup;
 			children = (
-				A2754CFA1C7E9670000B5CA0 /* AppDelegate.h */,
-				A2754CFB1C7E9670000B5CA0 /* AppDelegate.m */,
-				A2754D001C7E9670000B5CA0 /* Main.storyboard */,
 				A264D47D1C7FEE0D00E11066 /* 基类 */,
 				A2754E141C7E99CA000B5CA0 /* 总界面 */,
 				A2754D301C7E9907000B5CA0 /* 帮助文件 */,
 				A2754D331C7E9907000B5CA0 /* 工具类 */,
 				A2754DCF1C7E9907000B5CA0 /* App文件 */,
+				A24D729C1C808DBF00FFB3CF /* 其它 */,
 				A2754CF71C7E9670000B5CA0 /* Supporting Files */,
 			);
 			path = PianKe;
@@ -698,6 +724,8 @@
 				A264D4891C7FEE3800E11066 /* category */,
 				A2754D311C7E9907000B5CA0 /* HttpTool.h */,
 				A2754D321C7E9907000B5CA0 /* HttpTool.m */,
+				A264D4961C80290400E11066 /* UIView+Frame.h */,
+				A264D4971C80290400E11066 /* UIView+Frame.m */,
 			);
 			path = "帮助文件";
 			sourceTree = "<group>";
@@ -970,6 +998,7 @@
 				A2754E121C7E9907000B5CA0 /* SVProgressHUD.bundle in Resources */,
 				A2754D071C7E9670000B5CA0 /* LaunchScreen.storyboard in Resources */,
 				A27452241C7F2EDC009108B1 /* MJRefresh.bundle in Resources */,
+				A264D49D1C80451200E11066 /* SideMenuCellTableViewCell.xib in Resources */,
 				A2754D041C7E9670000B5CA0 /* Assets.xcassets in Resources */,
 				A2754D021C7E9670000B5CA0 /* Main.storyboard in Resources */,
 				A274517C1C7F258A009108B1 /* JGProgressHUD Resources.bundle in Resources */,
@@ -1013,6 +1042,7 @@
 				A2754DE11C7E9907000B5CA0 /* NSArray+MASAdditions.m in Sources */,
 				A27452211C7F2EDC009108B1 /* MJRefreshGifHeader.m in Sources */,
 				A2754E661C7EDA40000B5CA0 /* AllControllersTool.m in Sources */,
+				A264D49C1C80451200E11066 /* SideMenuCellTableViewCell.m in Sources */,
 				A2754CFC1C7E9670000B5CA0 /* AppDelegate.m in Sources */,
 				A274513D1C7F1C03009108B1 /* SDCycleScrollView.m in Sources */,
 				A27452161C7F2EDC009108B1 /* MJRefreshAutoFooter.m in Sources */,
@@ -1028,12 +1058,14 @@
 				A274521B1C7F2EDC009108B1 /* MJRefreshAutoGifFooter.m in Sources */,
 				A27451DF1C7F2E2E009108B1 /* MJPropertyType.m in Sources */,
 				A27452251C7F2EDC009108B1 /* MJRefreshConst.m in Sources */,
+				A264D4981C80290400E11066 /* UIView+Frame.m in Sources */,
 				A2754DDF1C7E9907000B5CA0 /* MASViewAttribute.m in Sources */,
 				A27451E01C7F2E2E009108B1 /* NSObject+MJClass.m in Sources */,
 				A2754E131C7E9907000B5CA0 /* SVProgressHUD.m in Sources */,
 				A2754DDE1C7E9907000B5CA0 /* MASLayoutConstraint.m in Sources */,
 				A2754DDB1C7E9907000B5CA0 /* MASCompositeConstraint.m in Sources */,
 				A2754DD91C7E9907000B5CA0 /* AFURLResponseSerialization.m in Sources */,
+				A264D4951C80257300E11066 /* SearchBar_textField.m in Sources */,
 				A27452291C7F2EDC009108B1 /* UIScrollView+MJRefresh.m in Sources */,
 				A2754DD71C7E9907000B5CA0 /* AFURLConnectionOperation.m in Sources */,
 				A274513A1C7F1C03009108B1 /* TADotView.m in Sources */,
@@ -1131,6 +1163,7 @@
 				A2754D011C7E9670000B5CA0 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		A2754D051C7E9670000B5CA0 /* LaunchScreen.storyboard */ = {
@@ -1228,6 +1261,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PianKe/其它/PKPrefixHeader.pch";
 				INFOPLIST_FILE = PianKe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CMCC.com.PianKe;
@@ -1239,6 +1274,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PianKe/其它/PKPrefixHeader.pch";
 				INFOPLIST_FILE = PianKe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CMCC.com.PianKe;
