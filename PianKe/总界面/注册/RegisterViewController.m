@@ -35,6 +35,8 @@
     [self.topView.backBtn addTarget:self action:@selector(backTo) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:self.bottomView];
+    [self.bottomView.FinishBtn addTarget:self action:@selector(FinishRegiste) forControlEvents:UIControlEventTouchUpInside];
+    [self.bottomView.messageBtn addTarget:self action:@selector(showMessage) forControlEvents:UIControlEventTouchUpInside];
     
     [self setupAutoLayout];
     
@@ -101,6 +103,23 @@
 - (void)backTo
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+/**
+ *  完成注册按钮
+ */
+- (void)FinishRegiste
+{
+    NSLog(@"点击了注册按钮");
+}
+
+/**
+ *  点击进入片刻协议页面
+ */
+- (void)showMessage
+{
+    NSLog(@"片刻协议页面");
 }
 
 

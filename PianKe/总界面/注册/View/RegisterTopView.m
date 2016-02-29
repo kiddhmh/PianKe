@@ -120,6 +120,7 @@
         [_boyButton setImage:[UIImage imageNamed:@"男"] forState:UIControlStateNormal];
         [_boyButton setImage:[UIImage imageNamed:@"男_sel"] forState:UIControlStateDisabled];
         [_boyButton addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
+        _boyButton.imageView.contentMode = UIViewContentModeCenter;
     }
     return _boyButton;
 }
@@ -132,6 +133,7 @@
         [_girlButton setImage:[UIImage imageNamed:@"女"] forState:UIControlStateNormal];
         [_girlButton setImage:[UIImage imageNamed:@"女_sel"] forState:UIControlStateDisabled];
         [_girlButton addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
+        _girlButton.imageView.contentMode = UIViewContentModeCenter;
     }
     return _girlButton;
 }
