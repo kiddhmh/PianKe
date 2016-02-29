@@ -9,5 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginView : UIView
+/**
+ *  搜索按钮
+ */
+@property (nonatomic,strong) UIButton *searchBtn;
+
+/**
+ *   登录/注册按钮
+ */
+@property (nonatomic,strong) UIButton *photoBtn;
 
 @end

@@ -14,6 +14,10 @@
 #import "AllControllersTool.h"
 #import "UIColor+Extension.h"
 #import "SideMenuCellTableViewCell.h"
+#import "Masonry.h"
+#import "SearchViewController.h"
+#import "LoginViewController.h"
+
 #define VIEWWIDTH self.view.frame.size.width
 #define VIEWHEIGHT self.view.frame.size.height
 @interface LeftMenuViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -28,6 +32,10 @@
  */
 @property (nonatomic,strong) NSArray *cellImages;
 
+@property (nonatomic,strong) LoginView *headView;
+
+@property (nonatomic,strong) PlayMusicView *playMusicView;
+
 @end
 
 @implementation LeftMenuViewController
@@ -38,7 +46,7 @@
 - (UITableView *)tableView
 {
     if (_tableView == nil) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, VIEWHEIGHT * 0.3, VIEWWIDTH, VIEWHEIGHT) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] init];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -77,14 +85,26 @@
     [self.view addSubview:self.tableView];
     
     //设置头部视图
-    UIView *headerView = [[LoginView alloc] initWithFrame:CGRectMake(0, 0,VIEWWIDTH * 0.75,VIEWHEIGHT * 0.3)];
+    LoginView *headerView = [[LoginView alloc] init];
     [headerView setBackgroundColor:[UIColor colorWithHexString:@"#303030"]];
+    
+    //头部视图搜索按钮关联方法
+    [headerView.searchBtn addTarget:self action:@selector(GotoSearch) forControlEvents:UIControlEventTouchUpInside];
+    
+    //头部视图登录/注册按钮关联方法
+    [headerView.photoBtn addTarget:self action:@selector(GotoLogin) forControlEvents:UIControlEventTouchUpInside];
+    
     [self.view addSubview:headerView];
+    self.headView = headerView;
     
     //设置尾部播放音乐视图
-    PlayMusicView *playMusic = [[PlayMusicView alloc] initWithFrame:CGRectMake(0, VIEWHEIGHT * 0.9, VIEWWIDTH / 0.75, VIEWHEIGHT * 0.1)];
+    PlayMusicView *playMusic = [[PlayMusicView alloc] init];
     playMusic.backgroundColor = RGB(28, 28, 28);
     [self.view addSubview:playMusic];
+    self.playMusicView = playMusic;
+    
+    //自动适配
+    [self setupConstrain];
 }
 
 
@@ -131,10 +151,67 @@
 }
 
 
-
+#pragma mark - 
+#pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 55;
+}
+
+
+#pragma mark - 
+#pragma mark -添加（自动适配）约束
+- (void)setupConstrain
+{
+    __weak typeof(self)vc = self;
+    
+    [self.headView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.top.equalTo(vc.view.mas_top);
+        make.left.equalTo(vc.view.mas_left);
+        make.right.equalTo(vc.view.mas_right);
+        make.height.mas_equalTo(VIEWHEIGHT * 0.3);
+    }];
+    
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.top.equalTo(vc.headView.mas_bottom);
+        make.left.equalTo(vc.view.mas_left);
+        make.right.equalTo(vc.view.mas_right);
+        make.bottom.equalTo(vc.playMusicView.mas_top);
+    }];
+    
+    [self.playMusicView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.equalTo(vc.view.mas_left);
+        make.right.equalTo(vc.view.mas_right);
+        make.bottom.equalTo(vc.view.mas_bottom);
+        make.height.mas_equalTo(VIEWHEIGHT * 0.1);
+    }];
+    
+}
+
+
+#pragma mark - 
+#pragma mark - 按钮关联方法
+/**
+ *  头部视图搜索按钮关联方法
+ */
+- (void)GotoSearch
+{
+    //进入搜索页面
+    SearchViewController *searchVC = [[SearchViewController alloc] init];
+    [self presentViewController:searchVC animated:YES completion:nil];
+}
+
+/**
+ *  头部视图登录/注册按钮关联方法
+ */
+- (void)GotoLogin
+{
+    //进入登录页面
+    LoginViewController *loginVC = [[LoginViewController alloc] init];
+    [self presentViewController:loginVC animated:YES completion:nil];
 }
 
 @end

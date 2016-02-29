@@ -65,10 +65,11 @@
         make.left.equalTo(vc.mas_left).offset(padding);
     }];
     //给按钮设置约束
+    CGFloat playBtnW = 20;
     [vc.playBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(20, 20));
+        make.size.mas_equalTo(CGSizeMake(playBtnW, playBtnW));
         make.centerY.mas_equalTo(vc.mas_centerY);
-        make.right.equalTo(vc.mas_right).offset(- vc.frame.size.width / 2);
+        make.right.mas_equalTo(vc.mas_right).offset(-playBtnW);
     }];
 }
 

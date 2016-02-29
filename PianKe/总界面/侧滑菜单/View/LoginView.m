@@ -7,17 +7,12 @@
 //
 
 #import "LoginView.h"
-#import "SearchBar_textField.h"
 #import "Masonry.h"
-@interface LoginView ()<UITextFieldDelegate>
+@interface LoginView ()
 /**
- *  搜索框
+ 背景图片
  */
-@property (nonatomic,strong) SearchBar_textField *search;
-/**
- *   头像图片
- */
-@property (nonatomic,strong) UIButton *photoBtn;
+@property (nonatomic,strong) UIImageView *imageView;
 
 
 @end
@@ -31,6 +26,7 @@
     if (self = [super initWithFrame:frame]) {
         //初始化子控件
         [self setupSubViews];
+        
     }
     return self;
 }
@@ -41,12 +37,16 @@
  */
 - (void)setupSubViews
 {
-    //创建搜索框
-    SearchBar_textField *serach = [SearchBar_textField searchBar];
-    self.search = serach;
-    self.search.delegate = self;
-    self.search.backgroundColor = [UIColor darkGrayColor];
+    //创建背景图片
+    self.imageView = [[UIImageView alloc] init];
+    self.imageView.image = [UIImage imageNamed:@"侧边头部背景"];
+    [self addSubview:self.imageView];
+    
+    //创建搜索按钮
+    UIButton *serach = [[UIButton alloc] init];
+    [serach setImage:[UIImage imageNamed:@"搜索"] forState:UIControlStateNormal];
     [self addSubview:serach];
+    self.searchBtn = serach;
     
     //创建四个按钮
     for (int i = 0; i < 4; i ++) {
@@ -66,7 +66,7 @@
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.and.height.mas_equalTo(@20);
             make.left.mas_equalTo(self.mas_left).offset(btnX);
-            make.bottom.equalTo(self.search.mas_top).offset(- pading *0.5);
+            make.bottom.equalTo(self.searchBtn.mas_top).offset(- pading *0.5);
         }];
     }
     
@@ -82,7 +82,6 @@
     photoBtn.adjustsImageWhenHighlighted = NO;
     photoBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0,5);
     photoBtn.titleEdgeInsets = UIEdgeInsetsMake(0,10, 0, 0);
-    [photoBtn addTarget:self action:@selector(Login) forControlEvents:UIControlEventTouchUpInside];
     self.photoBtn = photoBtn;
 }
 
@@ -93,7 +92,7 @@
 - (void)layoutSubviews
 {
     //设置搜索框的位置
-    [self.search mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.mas_centerX);
         make.centerY.equalTo(self.mas_centerY).offset(self.frame.size.height * 0.35);
         make.width.mas_equalTo(self.frame.size.width * 0.85);
@@ -109,6 +108,9 @@
         make.centerX.mas_equalTo(self.mas_centerX).offset(- self.frame.size.width * 0.2);
         make.centerY.mas_equalTo(self.mas_centerY).offset(- self.frame.size.width * 0.1);
     }];
+    
+    //设置背景图片的尺寸
+    self.imageView.frame = self.frame;
 }
 
 
@@ -128,13 +130,6 @@
 
 #pragma mark -
 #pragma mark - 其他方法
-/**
- *  登录注册按钮关联方法
- */
-- (void)Login
-{
-    NSLog(@"点击了登录注册按钮");
-}
 
 /**
  *  菜单按钮关联方法

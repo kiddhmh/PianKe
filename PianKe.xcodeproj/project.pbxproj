@@ -112,6 +112,15 @@
 		A2754E751C7EE447000B5CA0 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2754E6F1C7EE447000B5CA0 /* MMDrawerController.m */; };
 		A2754E761C7EE447000B5CA0 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = A2754E711C7EE447000B5CA0 /* MMDrawerVisualState.m */; };
 		A2754E771C7EE447000B5CA0 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2754E731C7EE447000B5CA0 /* UIViewController+MMDrawerController.m */; };
+		A279BDF21C840A59000B45C7 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A279BDF11C840A59000B45C7 /* SearchViewController.m */; };
+		A279BDF81C840D5B000B45C7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A279BDF71C840D5B000B45C7 /* LoginViewController.m */; };
+		A279BDFC1C840FAA000B45C7 /* TopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A279BDFB1C840FAA000B45C7 /* TopView.m */; };
+		A279BDFF1C8417D6000B45C7 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A279BDFE1C8417D6000B45C7 /* RegisterViewController.m */; };
+		A279BE101C84255A000B45C7 /* MiddleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A279BE0F1C84255A000B45C7 /* MiddleView.m */; };
+		A279BE131C842634000B45C7 /* HMHTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A279BE121C842634000B45C7 /* HMHTextField.m */; };
+		A279BE161C8434F5000B45C7 /* BottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = A279BE151C8434F5000B45C7 /* BottomView.m */; };
+		A279BE1D1C8447DE000B45C7 /* RegisterTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A279BE1C1C8447DE000B45C7 /* RegisterTopView.m */; };
+		A279BE201C84553E000B45C7 /* RegisterBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = A279BE1F1C84553E000B45C7 /* RegisterBottomView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,8 +152,8 @@
 		A264D48B1C7FEE3800E11066 /* UIBarButtonItem+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Helper.m"; sourceTree = "<group>"; };
 		A264D48C1C7FEE3800E11066 /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
 		A264D48D1C7FEE3800E11066 /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
-		A264D4931C80257300E11066 /* SearchBar_textField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBar_textField.h; sourceTree = "<group>"; };
-		A264D4941C80257300E11066 /* SearchBar_textField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBar_textField.m; sourceTree = "<group>"; };
+		A264D4931C80257300E11066 /* SearchBar_textField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchBar_textField.h; path = "../../侧滑菜单/View/SearchBar_textField.h"; sourceTree = "<group>"; };
+		A264D4941C80257300E11066 /* SearchBar_textField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchBar_textField.m; path = "../../侧滑菜单/View/SearchBar_textField.m"; sourceTree = "<group>"; };
 		A264D4961C80290400E11066 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		A264D4971C80290400E11066 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		A264D4991C80451200E11066 /* SideMenuCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuCellTableViewCell.h; sourceTree = "<group>"; };
@@ -350,6 +359,24 @@
 		A2754E711C7EE447000B5CA0 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
 		A2754E721C7EE447000B5CA0 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		A2754E731C7EE447000B5CA0 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		A279BDF01C840A59000B45C7 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		A279BDF11C840A59000B45C7 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		A279BDF61C840D5B000B45C7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		A279BDF71C840D5B000B45C7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A279BDFA1C840FAA000B45C7 /* TopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopView.h; sourceTree = "<group>"; };
+		A279BDFB1C840FAA000B45C7 /* TopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopView.m; sourceTree = "<group>"; };
+		A279BDFD1C8417D6000B45C7 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		A279BDFE1C8417D6000B45C7 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		A279BE0E1C84255A000B45C7 /* MiddleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiddleView.h; sourceTree = "<group>"; };
+		A279BE0F1C84255A000B45C7 /* MiddleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiddleView.m; sourceTree = "<group>"; };
+		A279BE111C842634000B45C7 /* HMHTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHTextField.h; sourceTree = "<group>"; };
+		A279BE121C842634000B45C7 /* HMHTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHTextField.m; sourceTree = "<group>"; };
+		A279BE141C8434F5000B45C7 /* BottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomView.h; sourceTree = "<group>"; };
+		A279BE151C8434F5000B45C7 /* BottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomView.m; sourceTree = "<group>"; };
+		A279BE1B1C8447DE000B45C7 /* RegisterTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterTopView.h; sourceTree = "<group>"; };
+		A279BE1C1C8447DE000B45C7 /* RegisterTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterTopView.m; sourceTree = "<group>"; };
+		A279BE1E1C84553E000B45C7 /* RegisterBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterBottomView.h; sourceTree = "<group>"; };
+		A279BE1F1C84553E000B45C7 /* RegisterBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterBottomView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -643,8 +670,6 @@
 		A274522B1C7F3366009108B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A264D4931C80257300E11066 /* SearchBar_textField.h */,
-				A264D4941C80257300E11066 /* SearchBar_textField.m */,
 				A274522C1C7F34E5009108B1 /* LoginView.h */,
 				A274522D1C7F34E5009108B1 /* LoginView.m */,
 				A27452321C7F4207009108B1 /* PlayMusicView.h */,
@@ -824,12 +849,19 @@
 		A2754E141C7E99CA000B5CA0 /* 总界面 */ = {
 			isa = PBXGroup;
 			children = (
-				A2754E611C7EDA0B000B5CA0 /* 侧滑菜单 */,
+				A2754E151C7E99CA000B5CA0 /* 启动加载界面 */,
 				A2754E621C7EDA0B000B5CA0 /* 调度(界面) */,
+				A2754E611C7EDA0B000B5CA0 /* 侧滑菜单 */,
+				A279BD871C83D23B000B45C7 /* 搜索 */,
+				A279BDF41C840D46000B45C7 /* 登录 */,
+				A279BDF51C840D46000B45C7 /* 注册 */,
+				A279BD851C83D07B000B45C7 /* 首页 */,
+				A279BD831C83D07B000B45C7 /* 电台 */,
+				A264D4841C7FEE2400E11066 /* 阅读 */,
+				A279BD841C83D07B000B45C7 /* 社区 */,
+				A279BD861C83D07B000B45C7 /* 碎片 */,
 				A2754E631C7EDA0B000B5CA0 /* 良品 */,
 				A264D4811C7FEE2400E11066 /* 设置 */,
-				A264D4841C7FEE2400E11066 /* 阅读 */,
-				A2754E151C7E99CA000B5CA0 /* 启动加载界面 */,
 			);
 			path = "总界面";
 			sourceTree = "<group>";
@@ -887,6 +919,99 @@
 				A2754E731C7EE447000B5CA0 /* UIViewController+MMDrawerController.m */,
 			);
 			path = MMDrawerController;
+			sourceTree = "<group>";
+		};
+		A279BD831C83D07B000B45C7 /* 电台 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "电台";
+			sourceTree = "<group>";
+		};
+		A279BD841C83D07B000B45C7 /* 社区 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "社区";
+			sourceTree = "<group>";
+		};
+		A279BD851C83D07B000B45C7 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "首页";
+			sourceTree = "<group>";
+		};
+		A279BD861C83D07B000B45C7 /* 碎片 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "碎片";
+			sourceTree = "<group>";
+		};
+		A279BD871C83D23B000B45C7 /* 搜索 */ = {
+			isa = PBXGroup;
+			children = (
+				A279BDF01C840A59000B45C7 /* SearchViewController.h */,
+				A279BDF11C840A59000B45C7 /* SearchViewController.m */,
+				A279BDF31C840A9D000B45C7 /* View */,
+			);
+			path = "搜索";
+			sourceTree = "<group>";
+		};
+		A279BDF31C840A9D000B45C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A264D4931C80257300E11066 /* SearchBar_textField.h */,
+				A264D4941C80257300E11066 /* SearchBar_textField.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A279BDF41C840D46000B45C7 /* 登录 */ = {
+			isa = PBXGroup;
+			children = (
+				A279BDF61C840D5B000B45C7 /* LoginViewController.h */,
+				A279BDF71C840D5B000B45C7 /* LoginViewController.m */,
+				A279BDF91C840F37000B45C7 /* View */,
+			);
+			path = "登录";
+			sourceTree = "<group>";
+		};
+		A279BDF51C840D46000B45C7 /* 注册 */ = {
+			isa = PBXGroup;
+			children = (
+				A279BDFD1C8417D6000B45C7 /* RegisterViewController.h */,
+				A279BDFE1C8417D6000B45C7 /* RegisterViewController.m */,
+				A279BE171C8446CA000B45C7 /* View */,
+			);
+			path = "注册";
+			sourceTree = "<group>";
+		};
+		A279BDF91C840F37000B45C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A279BDFA1C840FAA000B45C7 /* TopView.h */,
+				A279BDFB1C840FAA000B45C7 /* TopView.m */,
+				A279BE0E1C84255A000B45C7 /* MiddleView.h */,
+				A279BE0F1C84255A000B45C7 /* MiddleView.m */,
+				A279BE111C842634000B45C7 /* HMHTextField.h */,
+				A279BE121C842634000B45C7 /* HMHTextField.m */,
+				A279BE141C8434F5000B45C7 /* BottomView.h */,
+				A279BE151C8434F5000B45C7 /* BottomView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A279BE171C8446CA000B45C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A279BE1B1C8447DE000B45C7 /* RegisterTopView.h */,
+				A279BE1C1C8447DE000B45C7 /* RegisterTopView.m */,
+				A279BE1E1C84553E000B45C7 /* RegisterBottomView.h */,
+				A279BE1F1C84553E000B45C7 /* RegisterBottomView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1049,15 +1174,18 @@
 				A27451DE1C7F2E2E009108B1 /* MJPropertyKey.m in Sources */,
 				A2754DE21C7E9907000B5CA0 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				A274513E1C7F1C03009108B1 /* UIView+SDExtension.m in Sources */,
+				A279BDFF1C8417D6000B45C7 /* RegisterViewController.m in Sources */,
 				A27452311C7F3E03009108B1 /* LeftMenuViewController.m in Sources */,
 				A274516A1C7F1D9F009108B1 /* UIButton+WebCache.m in Sources */,
 				A264D4881C7FEE2400E11066 /* ReadingViewController.m in Sources */,
 				A2754DD31C7E9907000B5CA0 /* AFHTTPRequestOperationManager.m in Sources */,
 				A2754DD51C7E9907000B5CA0 /* AFNetworkReachabilityManager.m in Sources */,
 				A27451621C7F1D9F009108B1 /* NSData+ImageContentType.m in Sources */,
+				A279BDFC1C840FAA000B45C7 /* TopView.m in Sources */,
 				A274521B1C7F2EDC009108B1 /* MJRefreshAutoGifFooter.m in Sources */,
 				A27451DF1C7F2E2E009108B1 /* MJPropertyType.m in Sources */,
 				A27452251C7F2EDC009108B1 /* MJRefreshConst.m in Sources */,
+				A279BE101C84255A000B45C7 /* MiddleView.m in Sources */,
 				A264D4981C80290400E11066 /* UIView+Frame.m in Sources */,
 				A2754DDF1C7E9907000B5CA0 /* MASViewAttribute.m in Sources */,
 				A27451E01C7F2E2E009108B1 /* NSObject+MJClass.m in Sources */,
@@ -1071,6 +1199,7 @@
 				A274513A1C7F1C03009108B1 /* TADotView.m in Sources */,
 				A2754DE01C7E9907000B5CA0 /* MASViewConstraint.m in Sources */,
 				A274516C1C7F1D9F009108B1 /* UIImage+MultiFormat.m in Sources */,
+				A279BE1D1C8447DE000B45C7 /* RegisterTopView.m in Sources */,
 				A2754E751C7EE447000B5CA0 /* MMDrawerController.m in Sources */,
 				A2754DD61C7E9907000B5CA0 /* AFSecurityPolicy.m in Sources */,
 				A2754E691C7EDA7D000B5CA0 /* GoodPorductsViewController.m in Sources */,
@@ -1089,6 +1218,7 @@
 				A274521F1C7F2EDC009108B1 /* MJRefreshBackNormalFooter.m in Sources */,
 				A2754DDA1C7E9907000B5CA0 /* AFURLSessionManager.m in Sources */,
 				A27451DB1C7F2E2E009108B1 /* MJExtensionConst.m in Sources */,
+				A279BE161C8434F5000B45C7 /* BottomView.m in Sources */,
 				A2754DDD1C7E9907000B5CA0 /* MASConstraintMaker.m in Sources */,
 				A274521A1C7F2EDC009108B1 /* MJRefreshHeader.m in Sources */,
 				A27451661C7F1D9F009108B1 /* SDWebImageDownloader.m in Sources */,
@@ -1097,6 +1227,7 @@
 				A27452191C7F2EDC009108B1 /* MJRefreshFooter.m in Sources */,
 				A2754CF91C7E9670000B5CA0 /* main.m in Sources */,
 				A2754E761C7EE447000B5CA0 /* MMDrawerVisualState.m in Sources */,
+				A279BDF21C840A59000B45C7 /* SearchViewController.m in Sources */,
 				A27451651C7F1D9F009108B1 /* SDWebImageDecoder.m in Sources */,
 				A2754E111C7E9907000B5CA0 /* SVIndefiniteAnimatedView.m in Sources */,
 				A274513C1C7F1C03009108B1 /* SDCollectionViewCell.m in Sources */,
@@ -1104,6 +1235,8 @@
 				A27451201C7EF46C009108B1 /* Carousel.m in Sources */,
 				A27452261C7F2EDC009108B1 /* PianKeRefreshHeader.m in Sources */,
 				A27451701C7F1D9F009108B1 /* UIView+WebCacheOperation.m in Sources */,
+				A279BDF81C840D5B000B45C7 /* LoginViewController.m in Sources */,
+				A279BE201C84553E000B45C7 /* RegisterBottomView.m in Sources */,
 				A2754E181C7E9A4B000B5CA0 /* PKLaunchingViewController.m in Sources */,
 				A264D48F1C7FEE3800E11066 /* UIColor+Extension.m in Sources */,
 				A27452341C7F4207009108B1 /* PlayMusicView.m in Sources */,
@@ -1118,6 +1251,7 @@
 				A2754DD11C7E9907000B5CA0 /* HttpTool.m in Sources */,
 				A27451611C7F1D9E009108B1 /* MKAnnotationView+WebCache.m in Sources */,
 				A27451E31C7F2E2E009108B1 /* NSObject+MJProperty.m in Sources */,
+				A279BE131C842634000B45C7 /* HMHTextField.m in Sources */,
 				A274522A1C7F2EDC009108B1 /* UIView+MJExtension.m in Sources */,
 				A274513B1C7F1C03009108B1 /* TAPageControl.m in Sources */,
 				A2754DE31C7E9907000B5CA0 /* View+MASAdditions.m in Sources */,
