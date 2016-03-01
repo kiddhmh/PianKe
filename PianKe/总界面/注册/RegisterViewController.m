@@ -10,7 +10,11 @@
 #import "RegisterTopView.h"
 #import "Masonry.h"
 #import "RegisterBottomView.h"
-@interface RegisterViewController ()
+#import "SVProgressHUD.h"
+#import "HMHTextField.h"
+#import "DropDownMenu.h"
+#import "NSString+Extension.h"
+@interface RegisterViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 /**
  *  上部分视图
  */
@@ -33,8 +37,13 @@
     
     [self.view addSubview:self.topView];
     [self.topView.backBtn addTarget:self action:@selector(backTo) forControlEvents:UIControlEventTouchUpInside];
+    //给头像添加手势，选择照片
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(choosePhoto)];
+    [self.topView.iconImageView addGestureRecognizer:tap];
+    self.topView.iconImageView.userInteractionEnabled = YES;
     
     [self.view addSubview:self.bottomView];
+    //给按钮添加关联方法
     [self.bottomView.FinishBtn addTarget:self action:@selector(FinishRegiste) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomView.messageBtn addTarget:self action:@selector(showMessage) forControlEvents:UIControlEventTouchUpInside];
     
@@ -111,7 +120,14 @@
  */
 - (void)FinishRegiste
 {
-    NSLog(@"点击了注册按钮");
+    //先进行判断，三个文本框是否都输入文字
+    if ([self isRight]) {
+        NSLog(@"注册成功");
+        
+    }else
+    {
+        NSLog(@"注册失败");
+    }
 }
 
 /**
@@ -121,6 +137,38 @@
 {
     NSLog(@"片刻协议页面");
 }
+
+
+
+#pragma mark - 
+#pragma mark - 手势关联方法
+- (void)choosePhoto
+{
+    //显示弹框
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *actionPhoto = [UIAlertAction actionWithTitle:@"相机拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+       //开启相机，拍照
+        [self takePhoto:0];
+    }];
+    
+    UIAlertAction *actionLibrary = [UIAlertAction actionWithTitle:@"从相册中选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+       //从相册中选择照片
+        [self takePhoto:1];
+    }];
+    
+    UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [alertVC dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    [alertVC addAction:actionPhoto];
+    [alertVC addAction:actionLibrary];
+    [alertVC addAction:actionCancel];
+    
+    [self presentViewController:alertVC animated:YES completion:nil];
+    
+}
+
 
 
 #pragma mark -
@@ -139,6 +187,110 @@
 - (void)backFrame
 {
     self.view.transform = CGAffineTransformIdentity;
+}
+
+
+#pragma mark - 
+#pragma mark - 其他方法
+/**
+ *  开启相机或者相册
+ *
+ *  @param index 索引
+ */
+- (void)takePhoto:(NSInteger)index
+{
+    switch (index) {
+        case 0:
+            //唤醒相机
+        {
+            
+            if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+                //创建图片拾取器
+                UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                //设置代理
+                picker.delegate = self;
+                //设置来源
+                picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                //允许编辑照片
+                picker.allowsEditing = YES;
+                [self presentViewController:picker animated:YES completion:nil];
+            }else
+            {
+                [SVProgressHUD showErrorWithStatus:@"您的设备不支持相机功能"];
+            }
+        }
+            break;
+        case 1:
+            //唤醒相册
+        {
+            
+            if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+                //创建图片拾取器
+                UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                //设置代理
+                picker.delegate = self;
+                //设置来源
+                picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                //允许编辑照片
+                picker.allowsEditing = YES;
+                [self presentViewController:picker animated:YES completion:nil];
+            }else
+            {
+                [SVProgressHUD showErrorWithStatus:@"您的设备不支持相册功能"];
+            }
+        }
+            break;
+        default:
+            break;
+    }
+
+}
+
+
+#pragma mark - 
+#pragma mark - 图片拾取器代理方法
+/**
+ *  完成获取图片的操作
+ */
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    //获取编辑过的照片，设置头像
+    UIImage *iconImage = info[UIImagePickerControllerEditedImage];
+    self.topView.iconImageView.image = iconImage;
+    self.topView.iconImageView.layer.cornerRadius = 28;
+    self.topView.iconImageView.layer.masksToBounds = YES;
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma mark -
+#pragma mark - 判断文本框是否符合规范
+- (BOOL)isRight
+{
+    if (self.bottomView.nameTextField.text.length == 0) {
+        [DropDownMenu showWith:@"请输入昵称" to:self.view belowSubView:self.view];
+        return NO;
+    }else if (self.bottomView.YXTextField.text.length == 0)
+    {
+        [DropDownMenu showWith:@"请输入邮箱" to:self.view belowSubView:self.view];
+        return NO;
+    }else if (self.bottomView.MMTextField.text.length == 0){
+        [DropDownMenu showWith:@"请输入密码" to:self.view belowSubView:self.view];
+        return NO;
+    }else if ([self.bottomView.YXTextField.text isEmail] == NO){
+        [DropDownMenu showWith:@"邮箱格式错误" to:self.view belowSubView:self.view];
+    }
+    return YES;
+}
+
+
+/**
+ * 隐藏状态栏
+ */
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 @end

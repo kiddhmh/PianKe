@@ -87,7 +87,7 @@
     
     switch (index) {
         case 0:
-        {//第一次加载，加载[良品]界面
+        {//第一次加载，加载[首页]界面
             static HMHNavigationController *navVC = nil;
             static dispatch_once_t onceToken;
             dispatch_once(&onceToken, ^{
@@ -104,14 +104,14 @@
             [self.drawerController closeDrawerAnimated:YES completion:nil];
         }
             break;
-        case 1:
-            //第一次加载，加载[设置]界面
-        {//第一次加载，加载[良品]界面
+        case 2:
+            //第一次加载，加载[阅读]界面
+        {
             static HMHNavigationController *navVC = nil;
             static dispatch_once_t onceToken;
             dispatch_once(&onceToken, ^{
-                SettingsViewController *setVC = [[SettingsViewController alloc] init];
-                navVC = [[HMHNavigationController alloc] initWithRootViewController:setVC];
+                ReadingViewController *readVC = [[ReadingViewController alloc] init];
+                navVC = [[HMHNavigationController alloc] initWithRootViewController:readVC];
             });
             
             [self.drawerController setCenterViewController:navVC];
@@ -123,15 +123,14 @@
             [self.drawerController closeDrawerAnimated:YES completion:nil];
         }
             break;
-        case 2:
-            //第一次加载，加载[阅读]界面
-            break;
-            {//第一次加载，加载[良品]界面
+        case 6:
+            //第一次加载，加载[设置]界面
+            {
                 static HMHNavigationController *navVC = nil;
                 static dispatch_once_t onceToken;
                 dispatch_once(&onceToken, ^{
-                    ReadingViewController *readVC = [[ReadingViewController alloc] init];
-                    navVC = [[HMHNavigationController alloc] initWithRootViewController:readVC];
+                    SettingsViewController *setVC = [[SettingsViewController alloc] init];
+                    navVC = [[HMHNavigationController alloc] initWithRootViewController:setVC];
                 });
                 
                 [self.drawerController setCenterViewController:navVC];
@@ -142,11 +141,10 @@
                 //关闭抽屉控制器
                 [self.drawerController closeDrawerAnimated:YES completion:nil];
             }
+            break;
         default:
             break;
     }
-    
-    
 }
 
 @end

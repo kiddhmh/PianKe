@@ -18,7 +18,6 @@
  */
 @property (nonatomic,strong) UIButton *girlButton;
 
-
 @end
 @implementation RegisterTopView
 

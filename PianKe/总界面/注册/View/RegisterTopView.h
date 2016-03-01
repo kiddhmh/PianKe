@@ -18,4 +18,5 @@
  */
 @property (nonatomic,strong) UIImageView *iconImageView;
 
+
 @end

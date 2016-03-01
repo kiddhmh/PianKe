@@ -48,28 +48,6 @@
     [self addSubview:serach];
     self.searchBtn = serach;
     
-    //创建四个按钮
-    for (int i = 0; i < 4; i ++) {
-        UIButton *btn = [[UIButton alloc] init];
-        [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"Home%d",i + 1]] forState:UIControlStateNormal];
-        
-        [btn addTarget:self action:@selector(ChangeMenu:) forControlEvents:UIControlEventTouchUpInside];
-        
-        btn.tag = i;
-        
-        [self addSubview:btn];
-        
-        //设置按钮的位置
-        CGFloat pading = 30;
-        CGFloat margin = 65;
-        CGFloat btnX = pading + margin *i;
-        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.and.height.mas_equalTo(@20);
-            make.left.mas_equalTo(self.mas_left).offset(btnX);
-            make.bottom.equalTo(self.searchBtn.mas_top).offset(- pading *0.5);
-        }];
-    }
-    
     
     //创建登录注册按钮
     UIButton *photoBtn = [[UIButton alloc] init];
@@ -83,6 +61,29 @@
     photoBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0,5);
     photoBtn.titleEdgeInsets = UIEdgeInsetsMake(0,10, 0, 0);
     self.photoBtn = photoBtn;
+    
+    //创建四个按钮
+    for (int i = 0; i < 4; i ++) {
+        UIButton *btn = [[UIButton alloc] init];
+        [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"Home%d",i + 1]] forState:UIControlStateNormal];
+        
+        [btn addTarget:self action:@selector(ChangeMenu:) forControlEvents:UIControlEventTouchUpInside];
+        
+        btn.tag = i;
+        
+        [self addSubview:btn];
+        
+        //设置按钮的位置
+        CGFloat pading = 35;
+        CGFloat margin = 55;
+        CGFloat btnX = pading + margin *i;
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.and.height.mas_equalTo(@20);
+            make.left.mas_equalTo(self.mas_left).offset(btnX);
+            make.bottom.equalTo(self.searchBtn.mas_top).offset(- pading *0.5);
+        }];
+    }
+    
 }
 
 

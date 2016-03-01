@@ -214,6 +214,15 @@
     [self presentViewController:loginVC animated:YES completion:nil];
 }
 
+
+/**
+ * 更改状态栏颜色
+*/
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 @end
 
 

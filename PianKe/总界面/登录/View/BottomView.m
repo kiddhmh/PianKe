@@ -58,26 +58,25 @@
     //微博按钮的约束
     [_weiboButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(vc.mas_centerY);
-        make.left.equalTo(vc.titleView.mas_left);
+        make.left.mas_equalTo([UIScreen mainScreen].bounds.size.width * 0.15);
     }];
     
     //人人按钮的约束
-    CGFloat padding = [UIScreen mainScreen].bounds.size.width * 0.2;
     [_peopleButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(vc.mas_centerY);
-        make.left.equalTo(vc.weiboButton.mas_right).offset(padding);
+        make.left.mas_equalTo([UIScreen mainScreen].bounds.size.width * 0.35);
     }];
     
     //豆瓣按钮的约束
     [_doubanButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(vc.mas_centerY);
-        make.left.equalTo(vc.peopleButton.mas_right).offset(padding);
+        make.left.mas_equalTo([UIScreen mainScreen].bounds.size.width * 0.55);
     }];
     
     //QQ按钮的约束
     [_QQButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(vc.mas_centerY);
-        make.right.equalTo(vc.titleView.mas_right);
+        make.left.mas_equalTo([UIScreen mainScreen].bounds.size.width * 0.75);
     }];
 }
 

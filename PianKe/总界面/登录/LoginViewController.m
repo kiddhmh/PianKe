@@ -12,6 +12,9 @@
 #import "RegisterViewController.h"
 #import "MiddleView.h"
 #import "BottomView.h"
+#import "HMHTextField.h"
+#import "NSString+Extension.h"
+#import "DropDownMenu.h"
 
 @interface LoginViewController ()
 /**
@@ -42,8 +45,12 @@
     [self.view addSubview:self.bottomView];
     
     //给按钮添加关联方法
+    //返回按钮
     [self.topView.backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    //注册按钮
     [self.topView.registerBtn addTarget:self action:@selector(registerUser) forControlEvents:UIControlEventTouchUpInside];
+    //确认按钮
+    [self.middleView.LoginBtn addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
     
     //给子控件添加约束
     [self setupAutoLayout];
@@ -142,7 +149,7 @@
 
 
 #pragma mark - 
-#pragma mark - 其他方法
+#pragma mark - 按钮关联的方法
 /**
  *  返回上一级页面
  */
@@ -159,6 +166,46 @@
     RegisterViewController *UserVC = [[RegisterViewController alloc] init];
     
     [self presentViewController:UserVC animated:YES completion:nil];
+}
+
+/**
+ *  确认登录按钮
+ */
+- (void)login
+{
+    if ([self isRight]) {
+        NSLog(@"登录成功");
+    }else
+    {
+        NSLog(@"登录失败");
+    }
+}
+
+
+#pragma mark -
+#pragma mark - 判断文本框是否符合规范
+- (BOOL)isRight
+{
+    if (self.middleView.YXtextField.text.length == 0) {
+        [DropDownMenu showWith:@"请输入邮箱" to:self.view belowSubView:self.view];
+        return NO;
+    }else if (self.middleView.MMtextField.text.length == 0)
+    {
+        [DropDownMenu showWith:@"请输入密码" to:self.view belowSubView:self.view];
+        return NO;
+    }else if ([self.middleView.YXtextField.text isEmail] == NO){
+        [DropDownMenu showWith:@"邮箱格式错误" to:self.view belowSubView:self.view];
+    }
+    return YES;
+}
+
+
+/**
+ * 隐藏状态栏
+ */
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 @end

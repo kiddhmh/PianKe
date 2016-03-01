@@ -117,6 +117,7 @@
     if (!_MMtextField) {
         _MMtextField = [[HMHTextField alloc] init];
         _MMtextField.title = @"密码";
+        _MMtextField.secureTextEntry = YES;
     }
     return _MMtextField;
 }
