@@ -127,6 +127,10 @@
 		A2C5A37F1C86E4D800020230 /* list.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C5A37E1C86E4D800020230 /* list.m */; };
 		A2C5A3821C86E6F600020230 /* Tag_Info.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C5A3811C86E6F600020230 /* Tag_Info.m */; };
 		A2C5A3851C86E98600020230 /* SYBaeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C5A3841C86E98600020230 /* SYBaeTableViewCell.m */; };
+		A2C5A3911C86F56500020230 /* SYTagInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C5A3901C86F56500020230 /* SYTagInfoCell.m */; };
+		A2C5A3941C86F57000020230 /* SYMusicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C5A3931C86F57000020230 /* SYMusicCell.m */; };
+		A2C5A3971C86F58A00020230 /* SYTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C5A3961C86F58A00020230 /* SYTitleCell.m */; };
+		A2CE695D1C873A0F00DF9ADA /* LPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2CE695C1C873A0F00DF9ADA /* LPViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -395,6 +399,14 @@
 		A2C5A3811C86E6F600020230 /* Tag_Info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag_Info.m; sourceTree = "<group>"; };
 		A2C5A3831C86E98600020230 /* SYBaeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYBaeTableViewCell.h; sourceTree = "<group>"; };
 		A2C5A3841C86E98600020230 /* SYBaeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYBaeTableViewCell.m; sourceTree = "<group>"; };
+		A2C5A38F1C86F56500020230 /* SYTagInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYTagInfoCell.h; sourceTree = "<group>"; };
+		A2C5A3901C86F56500020230 /* SYTagInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYTagInfoCell.m; sourceTree = "<group>"; };
+		A2C5A3921C86F57000020230 /* SYMusicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYMusicCell.h; sourceTree = "<group>"; };
+		A2C5A3931C86F57000020230 /* SYMusicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMusicCell.m; sourceTree = "<group>"; };
+		A2C5A3951C86F58A00020230 /* SYTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYTitleCell.h; sourceTree = "<group>"; };
+		A2C5A3961C86F58A00020230 /* SYTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYTitleCell.m; sourceTree = "<group>"; };
+		A2CE695B1C873A0F00DF9ADA /* LPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPViewController.h; sourceTree = "<group>"; };
+		A2CE695C1C873A0F00DF9ADA /* LPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -791,6 +803,10 @@
 		A275EDE41C8562A700526612 /* 良品 */ = {
 			isa = PBXGroup;
 			children = (
+				A2CE695B1C873A0F00DF9ADA /* LPViewController.h */,
+				A2CE695C1C873A0F00DF9ADA /* LPViewController.m */,
+				A2CE695E1C873C2E00DF9ADA /* Model */,
+				A2CE695F1C873C2E00DF9ADA /* View */,
 			);
 			name = "良品";
 			path = "社区/良品";
@@ -829,6 +845,12 @@
 				A2C5A3781C86D43D00020230 /* PKRefreshFooter.m */,
 				A2C5A3831C86E98600020230 /* SYBaeTableViewCell.h */,
 				A2C5A3841C86E98600020230 /* SYBaeTableViewCell.m */,
+				A2C5A38F1C86F56500020230 /* SYTagInfoCell.h */,
+				A2C5A3901C86F56500020230 /* SYTagInfoCell.m */,
+				A2C5A3951C86F58A00020230 /* SYTitleCell.h */,
+				A2C5A3961C86F58A00020230 /* SYTitleCell.m */,
+				A2C5A3921C86F57000020230 /* SYMusicCell.h */,
+				A2C5A3931C86F57000020230 /* SYMusicCell.m */,
 				A275EDEC1C8562DA00526612 /* SDCycleScrollView */,
 			);
 			path = View;
@@ -1053,6 +1075,20 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		A2CE695E1C873C2E00DF9ADA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A2CE695F1C873C2E00DF9ADA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1196,6 +1232,7 @@
 				A275EE001C8562DA00526612 /* TADotView.m in Sources */,
 				A274516B1C7F1D9F009108B1 /* UIImage+GIF.m in Sources */,
 				A27451DC1C7F2E2E009108B1 /* MJFoundation.m in Sources */,
+				A2C5A3941C86F57000020230 /* SYMusicCell.m in Sources */,
 				A2C5A37F1C86E4D800020230 /* list.m in Sources */,
 				A275EDFD1C8562DA00526612 /* Carousel.m in Sources */,
 				A264D4801C7FEE0D00E11066 /* HMHNavigationController.m in Sources */,
@@ -1213,6 +1250,7 @@
 				A2754CFC1C7E9670000B5CA0 /* AppDelegate.m in Sources */,
 				A27451DE1C7F2E2E009108B1 /* MJPropertyKey.m in Sources */,
 				A2754DE21C7E9907000B5CA0 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				A2C5A3911C86F56500020230 /* SYTagInfoCell.m in Sources */,
 				A279BDFF1C8417D6000B45C7 /* RegisterViewController.m in Sources */,
 				A27452311C7F3E03009108B1 /* LeftMenuViewController.m in Sources */,
 				A2C5A3641C86D3EF00020230 /* MJRefreshAutoFooter.m in Sources */,
@@ -1221,6 +1259,7 @@
 				A275ED811C85455A00526612 /* NSString+Extension.m in Sources */,
 				A264D4881C7FEE2400E11066 /* ReadingViewController.m in Sources */,
 				A2754DD31C7E9907000B5CA0 /* AFHTTPRequestOperationManager.m in Sources */,
+				A2CE695D1C873A0F00DF9ADA /* LPViewController.m in Sources */,
 				A2C5A3791C86D43D00020230 /* PKRefreshFooter.m in Sources */,
 				A2754DD51C7E9907000B5CA0 /* AFNetworkReachabilityManager.m in Sources */,
 				A275EE041C8562DA00526612 /* UIView+SDExtension.m in Sources */,
@@ -1280,6 +1319,7 @@
 				A275EDFC1C8562DA00526612 /* GoodPorductsViewController.m in Sources */,
 				A2754E741C7EE447000B5CA0 /* MMDrawerBarButtonItem.m in Sources */,
 				A2C5A36A1C86D3EF00020230 /* MJRefreshAutoNormalFooter.m in Sources */,
+				A2C5A3971C86F58A00020230 /* SYTitleCell.m in Sources */,
 				A27451701C7F1D9F009108B1 /* UIView+WebCacheOperation.m in Sources */,
 				A279BDF81C840D5B000B45C7 /* LoginViewController.m in Sources */,
 				A279BE201C84553E000B45C7 /* RegisterBottomView.m in Sources */,

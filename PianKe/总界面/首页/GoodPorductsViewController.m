@@ -20,6 +20,9 @@
 #import "PKRefreshHeader.h"
 #import "UIBarButtonItem+Helper.h"
 #import "PKRefreshFooter.h"
+#import "list.h"
+#import "SYBaeTableViewCell.h"
+#import "Masonry.h"
 @interface GoodPorductsViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 /**
  *  首页顶部轮播器图片模型数组
@@ -37,6 +40,10 @@
  *  tableView
  */
 @property (nonatomic,strong) UITableView *tableView;
+/**
+ *  数据模型数组
+ */
+@property (nonatomic,strong) NSMutableArray *listArray;
 
 @end
 
@@ -61,6 +68,14 @@
 }
 
 
+- (NSMutableArray *)listArray
+{
+    if (!_listArray) {
+        _listArray = [NSMutableArray array];
+    }
+    return _listArray;
+}
+
 - (UITableView *)tableView
 {
     if (!_tableView) {
@@ -68,7 +83,9 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [[UIView alloc] init];
+        _tableView.separatorColor = [UIColor clearColor];
     }
+    
     return _tableView;
 }
 
@@ -151,16 +168,17 @@
         NSDictionary *dicData = [JSON objectForKey:@"data"];
         [self saveItemTitle:(dicData[@"date"])];
         
-        NSDictionary *diccarousel = [dicData objectForKey:@"carousel"];
-        
-        self.carouselImages = [Carousel mj_objectArrayWithKeyValuesArray:diccarousel];
+        self.carouselImages = [Carousel mj_objectArrayWithKeyValuesArray:[dicData objectForKey:@"carousel"]];
+        self.listArray = [list mj_objectArrayWithKeyValuesArray:[dicData objectForKey:@"list"]];
         
         //给轮播器设置数据
         for (Carousel *temp in self.carouselImages) {
             [self.cacheImages addObject:temp.img];
         }
         
+        
         self.scrollView.imageURLStringsGroup = self.cacheImages;
+        [self.tableView reloadData];
         
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"网络不给力"];
@@ -206,21 +224,38 @@
 #pragma mark - UITableViewDataSouce
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return self.listArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
-    cell.textLabel.text = @"测试数据";
-    return cell;
+        SYBaeTableViewCell *cell = nil;
+        list *model = self.listArray[indexPath.row];
+        NSString *identifier = [SYBaeTableViewCell cellIdentifierForRow:model];
+        Class class = NSClassFromString(identifier);
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        if (cell == nil) {
+            cell = [[class alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        cell.listModel = model;
+        return cell;
 }
 
+
+#pragma mark -
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [UIScreen mainScreen].bounds.size.height * 0.6;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 #pragma mark - 
 #pragma mark - 设置导航条标题

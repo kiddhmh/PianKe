@@ -14,6 +14,7 @@
 #import "HMHNavigationController.h"
 #import "ReadingViewController.h"
 #import "SettingsViewController.h"
+#import "LPViewController.h"
 
 @interface AllControllersTool ()
 @property (nonatomic,strong) MMDrawerController *drawerController;
@@ -112,6 +113,25 @@
             dispatch_once(&onceToken, ^{
                 ReadingViewController *readVC = [[ReadingViewController alloc] init];
                 navVC = [[HMHNavigationController alloc] initWithRootViewController:readVC];
+            });
+            
+            [self.drawerController setCenterViewController:navVC];
+            //切换根控制器
+            [UIApplication sharedApplication].keyWindow.rootViewController = self.drawerController;
+            [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
+            
+            //关闭抽屉控制器
+            [self.drawerController closeDrawerAnimated:YES completion:nil];
+        }
+            break;
+        case 5:
+            //第一次加载，加载[良品]页面 LPViewController
+        {
+            static HMHNavigationController *navVC = nil;
+            static dispatch_once_t onceToken;
+            dispatch_once(&onceToken, ^{
+                LPViewController *lpVC = [[LPViewController alloc] init];
+                navVC = [[HMHNavigationController alloc] initWithRootViewController:lpVC];
             });
             
             [self.drawerController setCenterViewController:navVC];
