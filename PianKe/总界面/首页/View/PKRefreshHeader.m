@@ -19,14 +19,14 @@
     
     //舍子普通状态的动画图片
     NSMutableArray *idleImages = [NSMutableArray array];
-    UIImage *imageBegin = [UIImage imageNamed:@"loading"];
+    UIImage *imageBegin = [UIImage imageNamed:@"pullRefresh"];
     [idleImages addObject:imageBegin];
     [self setImages:idleImages forState:MJRefreshStateIdle];
     
     
     //设置即将刷新的图片
     NSMutableArray *pullImages = [NSMutableArray array];
-    UIImage *imagePull = [UIImage imageNamed:@"pullRefresh"];
+    UIImage *imagePull = [UIImage imageNamed:@"loading"];
     [pullImages addObject:imagePull];
     [self setImages:pullImages forState:MJRefreshStatePulling];
     

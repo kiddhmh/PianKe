@@ -19,7 +19,8 @@
 #import "SDWebImageManager.h"
 #import "PKRefreshHeader.h"
 #import "UIBarButtonItem+Helper.h"
-@interface GoodPorductsViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate>
+#import "PKRefreshFooter.h"
+@interface GoodPorductsViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 /**
  *  首页顶部轮播器图片模型数组
  */
@@ -41,7 +42,8 @@
 
 @implementation GoodPorductsViewController
 
-
+#pragma mark -
+#pragma mark - 懒加载
 - (NSMutableArray *)cacheImages
 {
     if (!_cacheImages) {
@@ -58,30 +60,120 @@
     return _carouselImages;
 }
 
+
+- (UITableView *)tableView
+{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.tableFooterView = [[UIView alloc] init];
+    }
+    return _tableView;
+}
+
+#pragma mark -
+#pragma mark - 生命周期方法
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor whiteColor];
     
-    
-    //设置导航栏唤醒抽屉按钮
-    MMDrawerBarButtonItem *leftItem = [MMDrawerBarButtonItem itemWithNormalIcon:@"menu" highlightedIcon:nil target:self action:@selector(leftDrawerButtonPress:)];
-    
-    //设置紧挨着左侧按钮的标题按钮
-    MMDrawerBarButtonItem *titleItem = [MMDrawerBarButtonItem itemWithTitle:@"首页" target:nil action:nil];
-                                       
-    self.navigationItem.leftBarButtonItems = @[leftItem,titleItem];
-    
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
-    [self.view addSubview:tableView];
-    tableView.backgroundColor = [UIColor lightGrayColor];
-    self.tableView = tableView;
+    [self.view addSubview:self.tableView];
+    //设置导航栏按钮
+    [self setupNavItem];
     
     //发送网络请求
     [self setupURL];
     
     //设置顶部轮播器
-   SDCycleScrollView *scrollView = [[SDCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+    [self setupImageAction];
+    
+    //设置下拉刷新
+    self.tableView.mj_header = [PKRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    [self.tableView.mj_header beginRefreshing];
+    
+    //设置上拉加载更多
+    self.tableView.mj_footer = [PKRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+}
+
+
+
+#pragma mark - 
+#pragma mark - 设置导航栏按钮
+- (void)setupNavItem
+{
+    //设置导航栏唤醒抽屉按钮
+    MMDrawerBarButtonItem *leftItem = [MMDrawerBarButtonItem itemWithNormalIcon:@"menu" highlightedIcon:nil target:self action:@selector(leftDrawerButtonPress:)];
+    
+    //设置紧挨着左侧按钮的标题按钮
+    NSString *title = [[NSUserDefaults standardUserDefaults] objectForKey:@"today"];
+    MMDrawerBarButtonItem *titleItem;
+    if (title) {
+        titleItem = [MMDrawerBarButtonItem itemWithTitle:title target:nil action:nil];
+    }else{
+        titleItem = [MMDrawerBarButtonItem itemWithTitle:@"首页" target:nil action:nil];
+    }
+    
+    self.navigationItem.leftBarButtonItems = @[leftItem,titleItem];
+}
+
+
+- (void)leftDrawerButtonPress:(MMDrawerBarButtonItem *)item
+{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+}
+
+
+#pragma mark -
+#pragma mark - 刷新数据
+- (void)loadNewData
+{
+    NSLog(@"刷新数据中");
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.tableView.mj_header endRefreshing];
+    });
+}
+
+
+- (void)loadMoreData
+{
+    NSLog(@"加载更多数据");
+}
+
+
+#pragma mark -
+#pragma mark - 发送网络请求获取数据
+- (void)setupURL
+{
+    [HttpTool getWithPath:@"http://api2.pianke.me/pub/today" params:nil success:^(id JSON) {
+        
+        NSDictionary *dicData = [JSON objectForKey:@"data"];
+        [self saveItemTitle:(dicData[@"date"])];
+        
+        NSDictionary *diccarousel = [dicData objectForKey:@"carousel"];
+        
+        self.carouselImages = [Carousel mj_objectArrayWithKeyValuesArray:diccarousel];
+        
+        //给轮播器设置数据
+        for (Carousel *temp in self.carouselImages) {
+            [self.cacheImages addObject:temp.img];
+        }
+        
+        self.scrollView.imageURLStringsGroup = self.cacheImages;
+        
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"网络不给力"];
+    }];
+}
+
+
+#pragma mark - 
+#pragma mark - 初始化子控件
+- (void)setupImageAction
+{
+    //设置顶部轮播器
+    SDCycleScrollView *scrollView = [[SDCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height * 0.3)];
     scrollView.delegate = self;
     self.scrollView = scrollView;
     //设置分页位置
@@ -98,63 +190,8 @@
     self.tableView.tableHeaderView = self.scrollView;
     
     self.tableView.backgroundColor = [UIColor clearColor];
-    
-    //设置下拉刷新
-    self.tableView.mj_header = [PKRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-    [self.tableView.mj_header beginRefreshing];
 }
 
-
-- (void)leftDrawerButtonPress:(MMDrawerBarButtonItem *)item
-{
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-}
-
-
-- (void)loadNewData
-{
-    NSLog(@"刷新数据中");
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.tableView.mj_header endRefreshing];
-    });
-}
-
-#pragma mark -
-#pragma mark - 发送网络请求获取数据
-- (void)setupURL
-{
-    [HttpTool getWithPath:@"http://api2.pianke.me/pub/today" params:nil success:^(id JSON) {
-        
-        NSDictionary *dicData = [JSON objectForKey:@"data"];
-        NSDictionary *diccarousel = [dicData objectForKey:@"carousel"];
-        
-        self.carouselImages = [Carousel mj_objectArrayWithKeyValuesArray:diccarousel];
-
-//            //下载图片并存储
-//            for (Carousel *temp in self.carouselImages) {
-//                SDWebImageManager *manager = [SDWebImageManager sharedManager];
-//                
-//                [manager downloadImageWithURL:[NSURL URLWithString:temp.img] options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-//                    [manager saveImageToCache:image forURL:imageURL];
-//                    [self.cacheImages addObject:image];
-//                    
-//                    if (self.cacheImages.count == 6) {
-//                       self.scrollView.images = self.cacheImages;
-//                    }
-//                }];
-//            }
-        
-        //给轮播器设置数据
-        for (Carousel *temp in self.carouselImages) {
-            [self.cacheImages addObject:temp.img];
-        }
-        
-        self.scrollView.imageURLStringsGroup = self.cacheImages;
-        
-    } failure:^(NSError *error) {
-        [SVProgressHUD showErrorWithStatus:@"网络不给力"];
-    }];
-}
 
 #pragma mark -
 #pragma mark - 轮播器代理方法
@@ -165,4 +202,48 @@
 
 
 
+#pragma mark -
+#pragma mark - UITableViewDataSouce
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 20;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *ID = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    cell.textLabel.text = @"测试数据";
+    return cell;
+}
+
+
+#pragma mark - 
+#pragma mark - 设置导航条标题
+- (void)saveItemTitle:(NSString *)title
+{
+    [[NSUserDefaults standardUserDefaults] setObject:title forKey:@"today"];
+}
+
+
+- (void)test
+{
+    //            //下载图片并存储
+    //            for (Carousel *temp in self.carouselImages) {
+    //                SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    //
+    //                [manager downloadImageWithURL:[NSURL URLWithString:temp.img] options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+    //                    [manager saveImageToCache:image forURL:imageURL];
+    //                    [self.cacheImages addObject:image];
+    //
+    //                    if (self.cacheImages.count == 6) {
+    //                       self.scrollView.images = self.cacheImages;
+    //                    }
+    //                }];
+    //            }
+}
 @end
