@@ -50,6 +50,8 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        NSIndexPath *indexpath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [_tableView selectRowAtIndexPath:indexpath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
     return _tableView;
 }
@@ -127,6 +129,9 @@
     cell.title = self.titleArray[indexPath.row];
     cell.iconImage = self.cellImages[indexPath.row];
     
+    if (indexPath.row == 0) {
+        cell.TextColor = [UIColor whiteColor];
+    }
     return cell;
 }
 

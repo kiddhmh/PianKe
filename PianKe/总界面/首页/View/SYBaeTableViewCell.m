@@ -83,5 +83,9 @@
     return self;
 }
 
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+    
+}
 
 @end
