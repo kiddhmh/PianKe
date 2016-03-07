@@ -38,13 +38,17 @@
     
     self.addtimeLabel.text = headModel.addtime;
     
-    NSMutableAttributedString *att = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"from: %@",headModel.uname] attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:10]}];
-    [att addAttributes:@{
-                        NSFontAttributeName : [UIFont systemFontOfSize:11],
-                        NSForegroundColorAttributeName : RGB(55, 207, 16)
-                        } range:NSMakeRange(6, headModel.uname.length)];
-    [self.fromButton setAttributedTitle:att forState:UIControlStateNormal];
-    
+    if (headModel.uname) {
+        NSMutableAttributedString *att = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"from: %@",headModel.uname] attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:10]}];
+        [att addAttributes:@{
+                             NSFontAttributeName : [UIFont systemFontOfSize:11],
+                             NSForegroundColorAttributeName : RGB(55, 207, 16)
+                             } range:NSMakeRange(6, headModel.uname.length)];
+        [self.fromButton setAttributedTitle:att forState:UIControlStateNormal];
+    }else{
+        [self.fromButton setTitle:@"from: " forState:UIControlStateNormal];
+    }
+
     [self.louzhuImageView downloadImage:headModel.icon place:[UIImage imageNamed:@"timeline_image_placeholder"]];
 }
 

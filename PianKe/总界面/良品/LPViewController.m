@@ -87,9 +87,11 @@
 {
     //设置导航栏唤醒抽屉按钮
     MMDrawerBarButtonItem *leftItem = [MMDrawerBarButtonItem itemWithNormalIcon:@"menu" highlightedIcon:nil target:self action:@selector(leftDrawerButtonPress:)];
+    [leftItem setTintColor:[UIColor blackColor]];
     
     //设置紧挨着左侧按钮的标题按钮
     MMDrawerBarButtonItem *titleItem = [MMDrawerBarButtonItem itemWithTitle:@"良品" target:nil action:nil];
+    [titleItem setTintColor:[UIColor blackColor]];
     
     self.navigationItem.leftBarButtonItems = @[leftItem,titleItem];
 }

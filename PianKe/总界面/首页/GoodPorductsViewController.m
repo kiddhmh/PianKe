@@ -23,6 +23,7 @@
 #import "list.h"
 #import "SYBaeTableViewCell.h"
 #import "Masonry.h"
+#import "LoadingView.h"
 @interface GoodPorductsViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 /**
  *  首页顶部轮播器图片模型数组
@@ -44,6 +45,10 @@
  *  数据模型数组
  */
 @property (nonatomic,strong) NSMutableArray *listArray;
+/**
+ *  等待页面
+ */
+@property (nonatomic,strong) LoadingView *waitView;
 
 @end
 
@@ -112,6 +117,10 @@
     
     //设置上拉加载更多
     self.tableView.mj_footer = [PKRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    
+    //显示等待页面
+    self.waitView = [[LoadingView alloc] initWithFrame:self.view.frame];
+    [self.waitView showLoadingTo:self.tableView];
 }
 
 
@@ -176,12 +185,13 @@
             [self.cacheImages addObject:temp.img];
         }
         
-        
         self.scrollView.imageURLStringsGroup = self.cacheImages;
-        [self.tableView reloadData];
         
+        [self.tableView reloadData];
+        [self.waitView dismiss];
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"网络不给力"];
+        [self.waitView dismiss];
     }];
 }
 

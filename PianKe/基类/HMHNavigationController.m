@@ -27,7 +27,7 @@
     //设置样式
     [bar setTitleTextAttributes:@{
                                   NSForegroundColorAttributeName : [UIColor whiteColor],
-                                  NSFontAttributeName : [UIFont boldSystemFontOfSize:20]
+                                  NSFontAttributeName : [UIFont boldSystemFontOfSize:16]
                                   }];
     
     //设置导航条按钮样式
@@ -36,9 +36,8 @@
     //设置样式
     [item setTitleTextAttributes:@{
                                   NSForegroundColorAttributeName : [UIColor whiteColor],
-                                  NSFontAttributeName : [UIFont boldSystemFontOfSize:20]
+                                  NSFontAttributeName : [UIFont boldSystemFontOfSize:16]
                                   } forState:UIControlStateNormal];
-    
 }
 
 
