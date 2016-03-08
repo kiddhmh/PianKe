@@ -11,7 +11,35 @@
 #import "UIBarButtonItem+Helper.h"
 #import "UIViewController+MMDrawerController.h"
 #import "LoadingView.h"
-@interface ReadingViewController ()
+#import "SDCycleScrollView.h"
+#import "HttpTool.h"
+#import "MJExtension.h"
+#import "SVProgressHUD.h"
+#import "Readcarousel.h"
+#import "ReadListModel.h"
+#import "ReadPhotoView.h"
+
+@interface ReadingViewController ()<SDCycleScrollViewDelegate>
+/**
+ *  等待页面
+ */
+@property (nonatomic,strong) LoadingView *waitView;
+/**
+ *  顶部滚动视图
+ */
+@property (nonatomic,strong) SDCycleScrollView *SDscrollView;
+/**
+ *  顶部视图的图片数据模型数组
+ */
+@property (nonatomic,strong) NSArray *cacheImages;
+/**
+ *  书本数据模型数组
+ */
+@property (nonatomic,strong) NSArray *ReadListArray;
+/**
+ *  放置整体视图的ScrollView
+ */
+@property (nonatomic,strong) UIScrollView *mainScrollView;
 
 @end
 
@@ -22,27 +50,53 @@
 #pragma mark - 生命周期方法
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor orangeColor];
-    
     [self setupNavItem];
     
-    //添加等待动画
-    LoadingView *waitView = [[LoadingView alloc] initWithFrame:self.view.frame];
-    [waitView showLoadingTo:self.view];
+    [self.view addSubview:self.mainScrollView];
+    //设置顶部滚动视图
+    [self setupTopView];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [waitView dismiss];
-    });
+    //发送网络请求
+    [self setupURLRequest];
+    
+    //添加等待动画
+    self.waitView = [[LoadingView alloc] initWithFrame:self.view.frame];
+    [self.waitView showLoadingTo:self.view];
 }
 
 
 #pragma mark -
-#pragma mark - 自动适配
+#pragma mark - 发送网络请求
+- (void)setupURLRequest
+{
+    [HttpTool getWithPath:@"http://api2.pianke.me/read/columns" params:nil success:^(id JSON) {
+        
+        NSDictionary *dataDic = JSON[@"data"];
+        //顶部滚动视图的数据模型
+        self.cacheImages = [Readcarousel mj_objectArrayWithKeyValuesArray:dataDic[@"carousel"]];
+        //书本的数据模型
+        self.ReadListArray = [ReadListModel mj_objectArrayWithKeyValuesArray:dataDic[@"list"]];
+        
+        //给轮播器设置数据
+        NSMutableArray *imgs = [NSMutableArray array];
+        for (Readcarousel *temp in self.cacheImages) {
+            [imgs addObject:temp.img];
+        }
+        self.SDscrollView.imageURLStringsGroup = imgs;
+        
+        [self setupNinePhotoView];
+        
+        [self.waitView dismiss];
+    } failure:^(NSError *error) {
+        
+        [SVProgressHUD showErrorWithStatus:@"网络不给力"];
+        [self.waitView dismiss]; 
+    }];
+}
 
 
-
-#pragma mark - 
-#pragma mark - 初始化子控件方法
+#pragma mark -
+#pragma mark - 设置导航栏
 - (void)setupNavItem
 {
     //设置导航栏唤醒抽屉按钮
@@ -54,15 +108,99 @@
     self.navigationItem.leftBarButtonItems = @[leftItem,titleItem];
 }
 
-
 - (void)leftDrawerButtonPress:(MMDrawerBarButtonItem *)item
 {
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
+#pragma mark - 
+#pragma mark - 设置顶部视图
+- (void)setupTopView
+{
+    //设置顶部轮播器
+    SDCycleScrollView *scrollView = [[SDCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH,180)];
+    scrollView.delegate = self;
+    self.SDscrollView = scrollView;
+    //设置分页位置
+    self.SDscrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
+    //设置时间间隔
+    self.SDscrollView.autoScrollTimeInterval = 3.0;
+    //设置当前分页圆点颜色
+    self.SDscrollView.currentPageDotColor = [UIColor whiteColor];
+    //设置其它分页圆点颜色
+    self.SDscrollView.pageDotColor = [UIColor lightGrayColor];
+    //设置动画样式
+    self.SDscrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
+    
+    self.SDscrollView.backgroundColor = [UIColor lightGrayColor];
+    
+    [self.mainScrollView addSubview:self.SDscrollView];
+}
+
+
+#pragma mark - 
+#pragma mark - 设置内容图片
+- (void)setupNinePhotoView
+{
+    CGFloat padding = 5;
+    CGFloat photoW = (SCREENWIDTH - 20) / 3;
+    CGFloat photoH = photoW;
+    NSUInteger index = 0;
+    for (ReadListModel *model  in self.ReadListArray) {
+        ReadPhotoView *photoView = [[ReadPhotoView alloc] init];
+        photoView.coverimg = model.coverimg;
+        photoView.name = model.name;
+        photoView.enname = model.enname;
+        [self.mainScrollView addSubview:photoView];
+        
+        if (index == 10) {
+            CGFloat photobigX = padding;
+            CGFloat photobigY = 180 + 4 * padding + 3 * photoH;
+            CGFloat photobigW = SCREENWIDTH - 2 * padding;
+            CGFloat photobigH = photoH;
+            photoView.frame = CGRectMake(photobigX, photobigY, photobigW, photobigH);
+        }
+        
+        //设置frame
+        CGFloat photoX = (index % 3) * (photoW + padding) + padding;
+        CGFloat photoY = (index / 3) * (photoH + padding) + 180 + padding;
+        photoView.frame = CGRectMake(photoX, photoY, photoW, photoH);
+        
+        index += 1;
+    }
+    CGFloat contentSizeH = 180 + 4 * photoH + 5 * padding;
+    self.mainScrollView.contentSize = CGSizeMake(0,contentSizeH);
+}
+
 
 #pragma mark -
 #pragma mark - 懒加载
+- (NSArray *)cacheImages
+{
+    if (!_cacheImages) {
+        _cacheImages = [NSArray array];
+    }
+    return _cacheImages;
+}
 
+
+- (NSArray *)ReadListArray
+{
+    if (!_ReadListArray) {
+        _ReadListArray = [NSArray array];
+    }
+    return _ReadListArray;
+}
+
+
+- (UIScrollView *)mainScrollView
+{
+    if (!_mainScrollView) {
+        _mainScrollView = [[UIScrollView alloc] init];
+        _mainScrollView.frame = [UIScreen mainScreen].bounds;
+        _mainScrollView.backgroundColor = [UIColor whiteColor];
+    }
+    return _mainScrollView;
+}
 
 @end

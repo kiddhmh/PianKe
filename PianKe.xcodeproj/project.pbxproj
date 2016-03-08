@@ -151,6 +151,9 @@
 		A2C5A3911C86F56500020230 /* SYTagInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C5A3901C86F56500020230 /* SYTagInfoCell.m */; };
 		A2C5A3941C86F57000020230 /* SYMusicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C5A3931C86F57000020230 /* SYMusicCell.m */; };
 		A2C5A3971C86F58A00020230 /* SYTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C5A3961C86F58A00020230 /* SYTitleCell.m */; };
+		A2F3321D1C8E62D70095B7F2 /* Readcarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F3321C1C8E62D70095B7F2 /* Readcarousel.m */; };
+		A2F332201C8E647F0095B7F2 /* ReadListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F3321F1C8E647F0095B7F2 /* ReadListModel.m */; };
+		A2F332231C8E71C80095B7F2 /* ReadPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F332221C8E71C80095B7F2 /* ReadPhotoView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -467,6 +470,12 @@
 		A2C5A3931C86F57000020230 /* SYMusicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMusicCell.m; sourceTree = "<group>"; };
 		A2C5A3951C86F58A00020230 /* SYTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYTitleCell.h; sourceTree = "<group>"; };
 		A2C5A3961C86F58A00020230 /* SYTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYTitleCell.m; sourceTree = "<group>"; };
+		A2F3321B1C8E62D70095B7F2 /* Readcarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Readcarousel.h; sourceTree = "<group>"; };
+		A2F3321C1C8E62D70095B7F2 /* Readcarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Readcarousel.m; sourceTree = "<group>"; };
+		A2F3321E1C8E647F0095B7F2 /* ReadListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadListModel.h; sourceTree = "<group>"; };
+		A2F3321F1C8E647F0095B7F2 /* ReadListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadListModel.m; sourceTree = "<group>"; };
+		A2F332211C8E71C80095B7F2 /* ReadPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadPhotoView.h; sourceTree = "<group>"; };
+		A2F332221C8E71C80095B7F2 /* ReadPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadPhotoView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -531,6 +540,8 @@
 			children = (
 				A264D4851C7FEE2400E11066 /* ReadingViewController.h */,
 				A264D4861C7FEE2400E11066 /* ReadingViewController.m */,
+				A2F332191C8E5EFD0095B7F2 /* Model */,
+				A2F3321A1C8E5EFD0095B7F2 /* View */,
 			);
 			path = "阅读";
 			sourceTree = "<group>";
@@ -1244,6 +1255,26 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		A2F332191C8E5EFD0095B7F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A2F3321B1C8E62D70095B7F2 /* Readcarousel.h */,
+				A2F3321C1C8E62D70095B7F2 /* Readcarousel.m */,
+				A2F3321E1C8E647F0095B7F2 /* ReadListModel.h */,
+				A2F3321F1C8E647F0095B7F2 /* ReadListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A2F3321A1C8E5EFD0095B7F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A2F332211C8E71C80095B7F2 /* ReadPhotoView.h */,
+				A2F332221C8E71C80095B7F2 /* ReadPhotoView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1425,9 +1456,11 @@
 				A2754DD51C7E9907000B5CA0 /* AFNetworkReachabilityManager.m in Sources */,
 				A275EE041C8562DA00526612 /* UIView+SDExtension.m in Sources */,
 				A27451621C7F1D9F009108B1 /* NSData+ImageContentType.m in Sources */,
+				A2F332231C8E71C80095B7F2 /* ReadPhotoView.m in Sources */,
 				A279BDFC1C840FAA000B45C7 /* TopView.m in Sources */,
 				A2C5A3761C86D3EF00020230 /* UIView+MJExtension.m in Sources */,
 				A27451DF1C7F2E2E009108B1 /* MJPropertyType.m in Sources */,
+				A2F3321D1C8E62D70095B7F2 /* Readcarousel.m in Sources */,
 				A279BE101C84255A000B45C7 /* MiddleView.m in Sources */,
 				A264D4981C80290400E11066 /* UIView+Frame.m in Sources */,
 				A2C5A3691C86D3EF00020230 /* MJRefreshAutoGifFooter.m in Sources */,
@@ -1496,6 +1529,7 @@
 				A2B4DEC21C891E6F00216FBD /* LPDataModel.m in Sources */,
 				A279BDF81C840D5B000B45C7 /* LoginViewController.m in Sources */,
 				A2B4DEC41C891E6F00216FBD /* LPRootModel.m in Sources */,
+				A2F332201C8E647F0095B7F2 /* ReadListModel.m in Sources */,
 				A279BE201C84553E000B45C7 /* RegisterBottomView.m in Sources */,
 				A2754E181C7E9A4B000B5CA0 /* PKLaunchingViewController.m in Sources */,
 				A264D48F1C7FEE3800E11066 /* UIColor+Extension.m in Sources */,
@@ -1659,7 +1693,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PianKe/其它/PKPrefixHeader.pch";
 				INFOPLIST_FILE = PianKe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = CMCC.com.PianKe;
+				PRODUCT_BUNDLE_IDENTIFIER = "hmh7-126.com";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1672,7 +1706,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PianKe/其它/PKPrefixHeader.pch";
 				INFOPLIST_FILE = PianKe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = CMCC.com.PianKe;
+				PRODUCT_BUNDLE_IDENTIFIER = "hmh7-126.com";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -88,4 +88,9 @@
     
 }
 
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
+{
+    
+}
+
 @end

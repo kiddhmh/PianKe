@@ -95,7 +95,7 @@
 @interface AFURLSessionManager : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDownloadDelegate, NSSecureCoding, NSCopying>
 
 /**
- The managed session.
+ The managed session.s
  */
 @property (readonly, nonatomic, strong) NSURLSession *session;
 
