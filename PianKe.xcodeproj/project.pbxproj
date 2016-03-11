@@ -154,6 +154,12 @@
 		A2F3321D1C8E62D70095B7F2 /* Readcarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F3321C1C8E62D70095B7F2 /* Readcarousel.m */; };
 		A2F332201C8E647F0095B7F2 /* ReadListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F3321F1C8E647F0095B7F2 /* ReadListModel.m */; };
 		A2F332231C8E71C80095B7F2 /* ReadPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F332221C8E71C80095B7F2 /* ReadPhotoView.m */; };
+		A2F79EAD1C8FEE12007E5388 /* SQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F79EAC1C8FEE12007E5388 /* SQViewController.m */; };
+		A2F79EB21C8FF40F007E5388 /* SQHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F79EB11C8FF40F007E5388 /* SQHeaderView.m */; };
+		A2F79EB51C8FF8BE007E5388 /* SQHotTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F79EB41C8FF8BE007E5388 /* SQHotTableView.m */; };
+		A2F79EB81C8FF93E007E5388 /* SQHotTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F79EB71C8FF93E007E5388 /* SQHotTableViewCell.m */; };
+		A2F79EBE1C8FFA7A007E5388 /* SQHotListFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F79EBD1C8FFA7A007E5388 /* SQHotListFrameModel.m */; };
+		A2F79EC11C8FFF81007E5388 /* SQHotListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F79EC01C8FFF81007E5388 /* SQHotListModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -470,12 +476,26 @@
 		A2C5A3931C86F57000020230 /* SYMusicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYMusicCell.m; sourceTree = "<group>"; };
 		A2C5A3951C86F58A00020230 /* SYTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYTitleCell.h; sourceTree = "<group>"; };
 		A2C5A3961C86F58A00020230 /* SYTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYTitleCell.m; sourceTree = "<group>"; };
+		A2EC862E1C8EC9B000D00846 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		A2EC862F1C8EC9B000D00846 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		A2F3321B1C8E62D70095B7F2 /* Readcarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Readcarousel.h; sourceTree = "<group>"; };
 		A2F3321C1C8E62D70095B7F2 /* Readcarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Readcarousel.m; sourceTree = "<group>"; };
 		A2F3321E1C8E647F0095B7F2 /* ReadListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadListModel.h; sourceTree = "<group>"; };
 		A2F3321F1C8E647F0095B7F2 /* ReadListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadListModel.m; sourceTree = "<group>"; };
 		A2F332211C8E71C80095B7F2 /* ReadPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadPhotoView.h; sourceTree = "<group>"; };
 		A2F332221C8E71C80095B7F2 /* ReadPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadPhotoView.m; sourceTree = "<group>"; };
+		A2F79EAB1C8FEE12007E5388 /* SQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQViewController.h; sourceTree = "<group>"; };
+		A2F79EAC1C8FEE12007E5388 /* SQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQViewController.m; sourceTree = "<group>"; };
+		A2F79EB01C8FF40F007E5388 /* SQHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQHeaderView.h; sourceTree = "<group>"; };
+		A2F79EB11C8FF40F007E5388 /* SQHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQHeaderView.m; sourceTree = "<group>"; };
+		A2F79EB31C8FF8BE007E5388 /* SQHotTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQHotTableView.h; sourceTree = "<group>"; };
+		A2F79EB41C8FF8BE007E5388 /* SQHotTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQHotTableView.m; sourceTree = "<group>"; };
+		A2F79EB61C8FF93E007E5388 /* SQHotTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQHotTableViewCell.h; sourceTree = "<group>"; };
+		A2F79EB71C8FF93E007E5388 /* SQHotTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQHotTableViewCell.m; sourceTree = "<group>"; };
+		A2F79EBC1C8FFA7A007E5388 /* SQHotListFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQHotListFrameModel.h; sourceTree = "<group>"; };
+		A2F79EBD1C8FFA7A007E5388 /* SQHotListFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQHotListFrameModel.m; sourceTree = "<group>"; };
+		A2F79EBF1C8FFF81007E5388 /* SQHotListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQHotListModel.h; sourceTree = "<group>"; };
+		A2F79EC01C8FFF81007E5388 /* SQHotListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQHotListModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -960,6 +980,10 @@
 		A279BD841C83D07B000B45C7 /* 社区 */ = {
 			isa = PBXGroup;
 			children = (
+				A2F79EAB1C8FEE12007E5388 /* SQViewController.h */,
+				A2F79EAC1C8FEE12007E5388 /* SQViewController.m */,
+				A2F79EAE1C8FEFB4007E5388 /* Model */,
+				A2F79EAF1C8FEFB4007E5388 /* View */,
 			);
 			path = "社区";
 			sourceTree = "<group>";
@@ -1117,8 +1141,8 @@
 				A2BF8C011C8D171F00ED9C66 /* counterList.m */,
 				A2BF8C031C8D177C00ED9C66 /* ListModel.h */,
 				A2BF8C041C8D177C00ED9C66 /* ListModel.m */,
-				A2BF8C0F1C8D279F00ED9C66 /* ListModelFrame.h */,
 				A2BF8C101C8D279F00ED9C66 /* ListModelFrame.m */,
+				A2BF8C0F1C8D279F00ED9C66 /* ListModelFrame.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1275,6 +1299,30 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A2F79EAE1C8FEFB4007E5388 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A2F79EBF1C8FFF81007E5388 /* SQHotListModel.h */,
+				A2F79EC01C8FFF81007E5388 /* SQHotListModel.m */,
+				A2F79EBC1C8FFA7A007E5388 /* SQHotListFrameModel.h */,
+				A2F79EBD1C8FFA7A007E5388 /* SQHotListFrameModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A2F79EAF1C8FEFB4007E5388 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A2F79EB01C8FF40F007E5388 /* SQHeaderView.h */,
+				A2F79EB11C8FF40F007E5388 /* SQHeaderView.m */,
+				A2F79EB31C8FF8BE007E5388 /* SQHotTableView.h */,
+				A2F79EB41C8FF8BE007E5388 /* SQHotTableView.m */,
+				A2F79EB61C8FF93E007E5388 /* SQHotTableViewCell.h */,
+				A2F79EB71C8FF93E007E5388 /* SQHotTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1418,6 +1466,7 @@
 				A275EE001C8562DA00526612 /* TADotView.m in Sources */,
 				A274516B1C7F1D9F009108B1 /* UIImage+GIF.m in Sources */,
 				A27451DC1C7F2E2E009108B1 /* MJFoundation.m in Sources */,
+				A2F79EB21C8FF40F007E5388 /* SQHeaderView.m in Sources */,
 				A2C5A3941C86F57000020230 /* SYMusicCell.m in Sources */,
 				A2932B5C1C87C65600049982 /* UIImageView+SDWedImage.m in Sources */,
 				A2C5A37F1C86E4D800020230 /* list.m in Sources */,
@@ -1425,6 +1474,7 @@
 				A264D4801C7FEE0D00E11066 /* HMHNavigationController.m in Sources */,
 				A2754E771C7EE447000B5CA0 /* UIViewController+MMDrawerController.m in Sources */,
 				A2C5A36F1C86D3EF00020230 /* MJRefreshGifHeader.m in Sources */,
+				A2F79EB51C8FF8BE007E5388 /* SQHotTableView.m in Sources */,
 				A2754DD21C7E9907000B5CA0 /* AFHTTPRequestOperation.m in Sources */,
 				A275EE011C8562DA00526612 /* TAPageControl.m in Sources */,
 				A2C5A3681C86D3EF00020230 /* MJRefreshHeader.m in Sources */,
@@ -1486,6 +1536,7 @@
 				A2C5A3751C86D3EF00020230 /* UIScrollView+MJRefresh.m in Sources */,
 				A2754DD41C7E9907000B5CA0 /* AFHTTPSessionManager.m in Sources */,
 				A27451641C7F1D9F009108B1 /* SDWebImageCompat.m in Sources */,
+				A2F79EC11C8FFF81007E5388 /* SQHotListModel.m in Sources */,
 				A27451691C7F1D9F009108B1 /* SDWebImagePrefetcher.m in Sources */,
 				A275EE021C8562DA00526612 /* SDCollectionViewCell.m in Sources */,
 				A275ED7B1C853C7900526612 /* DropDownMenu.m in Sources */,
@@ -1500,6 +1551,7 @@
 				A2BF8C081C8D181200ED9C66 /* NSString+Helper.m in Sources */,
 				A2BF8C6A1C8D8F4600ED9C66 /* SPXQViewController.m in Sources */,
 				A27451E11C7F2E2E009108B1 /* NSObject+MJCoding.m in Sources */,
+				A2F79EB81C8FF93E007E5388 /* SQHotTableViewCell.m in Sources */,
 				A2754DDA1C7E9907000B5CA0 /* AFURLSessionManager.m in Sources */,
 				A2BF8BFC1C8D0DD200ED9C66 /* SPViewController.m in Sources */,
 				A27451DB1C7F2E2E009108B1 /* MJExtensionConst.m in Sources */,
@@ -1511,6 +1563,7 @@
 				A27451661C7F1D9F009108B1 /* SDWebImageDownloader.m in Sources */,
 				A2B4DEAC1C89155E00216FBD /* NSString+ChangeHtmlString.m in Sources */,
 				A27451E21C7F2E2E009108B1 /* NSObject+MJKeyValue.m in Sources */,
+				A2F79EBE1C8FFA7A007E5388 /* SQHotListFrameModel.m in Sources */,
 				A2C5A2061C86BB3300020230 /* LoadingView.m in Sources */,
 				A2C5A36B1C86D3EF00020230 /* MJRefreshAutoStateFooter.m in Sources */,
 				A274522E1C7F34E5009108B1 /* LoginView.m in Sources */,
@@ -1525,6 +1578,7 @@
 				A2C5A36A1C86D3EF00020230 /* MJRefreshAutoNormalFooter.m in Sources */,
 				A2BF8C0E1C8D216900ED9C66 /* SPTableViewCell.m in Sources */,
 				A2C5A3971C86F58A00020230 /* SYTitleCell.m in Sources */,
+				A2F79EAD1C8FEE12007E5388 /* SQViewController.m in Sources */,
 				A27451701C7F1D9F009108B1 /* UIView+WebCacheOperation.m in Sources */,
 				A2B4DEC21C891E6F00216FBD /* LPDataModel.m in Sources */,
 				A279BDF81C840D5B000B45C7 /* LoginViewController.m in Sources */,
@@ -1589,6 +1643,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A2754D011C7E9670000B5CA0 /* Base */,
+				A2EC862E1C8EC9B000D00846 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			path = ..;
@@ -1598,6 +1653,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A2754D061C7E9670000B5CA0 /* Base */,
+				A2EC862F1C8EC9B000D00846 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
