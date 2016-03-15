@@ -16,6 +16,14 @@
 		A264D4981C80290400E11066 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = A264D4971C80290400E11066 /* UIView+Frame.m */; };
 		A264D49C1C80451200E11066 /* SideMenuCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A264D49A1C80451200E11066 /* SideMenuCellTableViewCell.m */; };
 		A264D49D1C80451200E11066 /* SideMenuCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A264D49B1C80451200E11066 /* SideMenuCellTableViewCell.xib */; };
+		A26502F01C9680F5003D0F23 /* RadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A26502EF1C9680F5003D0F23 /* RadioViewController.m */; };
+		A26502F51C968B56003D0F23 /* RadioCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A26502F41C968B56003D0F23 /* RadioCarousel.m */; };
+		A26502F81C968B93003D0F23 /* RadioAllList.m in Sources */ = {isa = PBXBuildFile; fileRef = A26502F71C968B93003D0F23 /* RadioAllList.m */; };
+		A26502FB1C968BC3003D0F23 /* RadioUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A26502FA1C968BC3003D0F23 /* RadioUserInfo.m */; };
+		A26502FE1C968D7F003D0F23 /* RadioHostList.m in Sources */ = {isa = PBXBuildFile; fileRef = A26502FD1C968D7F003D0F23 /* RadioHostList.m */; };
+		A26503011C96935A003D0F23 /* RadioHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A26503001C96935A003D0F23 /* RadioHeaderView.m */; };
+		A26503051C969F32003D0F23 /* RadioListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A26503031C969F32003D0F23 /* RadioListCell.m */; };
+		A26503061C969F32003D0F23 /* RadioListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A26503041C969F32003D0F23 /* RadioListCell.xib */; };
 		A27451611C7F1D9E009108B1 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A27451411C7F1D9E009108B1 /* MKAnnotationView+WebCache.m */; };
 		A27451621C7F1D9F009108B1 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = A27451431C7F1D9E009108B1 /* NSData+ImageContentType.m */; };
 		A27451631C7F1D9F009108B1 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A27451451C7F1D9E009108B1 /* SDImageCache.m */; };
@@ -198,6 +206,21 @@
 		A264D4991C80451200E11066 /* SideMenuCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuCellTableViewCell.h; sourceTree = "<group>"; };
 		A264D49A1C80451200E11066 /* SideMenuCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuCellTableViewCell.m; sourceTree = "<group>"; };
 		A264D49B1C80451200E11066 /* SideMenuCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuCellTableViewCell.xib; sourceTree = "<group>"; };
+		A26502EE1C9680F5003D0F23 /* RadioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioViewController.h; sourceTree = "<group>"; };
+		A26502EF1C9680F5003D0F23 /* RadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioViewController.m; sourceTree = "<group>"; };
+		A26502F31C968B56003D0F23 /* RadioCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioCarousel.h; sourceTree = "<group>"; };
+		A26502F41C968B56003D0F23 /* RadioCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioCarousel.m; sourceTree = "<group>"; };
+		A26502F61C968B93003D0F23 /* RadioAllList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioAllList.h; sourceTree = "<group>"; };
+		A26502F71C968B93003D0F23 /* RadioAllList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioAllList.m; sourceTree = "<group>"; };
+		A26502F91C968BC3003D0F23 /* RadioUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioUserInfo.h; sourceTree = "<group>"; };
+		A26502FA1C968BC3003D0F23 /* RadioUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioUserInfo.m; sourceTree = "<group>"; };
+		A26502FC1C968D7F003D0F23 /* RadioHostList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioHostList.h; sourceTree = "<group>"; };
+		A26502FD1C968D7F003D0F23 /* RadioHostList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioHostList.m; sourceTree = "<group>"; };
+		A26502FF1C96935A003D0F23 /* RadioHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioHeaderView.h; sourceTree = "<group>"; };
+		A26503001C96935A003D0F23 /* RadioHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioHeaderView.m; sourceTree = "<group>"; };
+		A26503021C969F32003D0F23 /* RadioListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioListCell.h; sourceTree = "<group>"; };
+		A26503031C969F32003D0F23 /* RadioListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioListCell.m; sourceTree = "<group>"; };
+		A26503041C969F32003D0F23 /* RadioListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioListCell.xib; sourceTree = "<group>"; };
 		A27451401C7F1D9E009108B1 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		A27451411C7F1D9E009108B1 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		A27451421C7F1D9E009108B1 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -581,6 +604,33 @@
 				A2932B5B1C87C65600049982 /* UIImageView+SDWedImage.m */,
 			);
 			path = category;
+			sourceTree = "<group>";
+		};
+		A26502F11C968170003D0F23 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A26502F91C968BC3003D0F23 /* RadioUserInfo.h */,
+				A26502FA1C968BC3003D0F23 /* RadioUserInfo.m */,
+				A26502F31C968B56003D0F23 /* RadioCarousel.h */,
+				A26502F41C968B56003D0F23 /* RadioCarousel.m */,
+				A26502F61C968B93003D0F23 /* RadioAllList.h */,
+				A26502F71C968B93003D0F23 /* RadioAllList.m */,
+				A26502FC1C968D7F003D0F23 /* RadioHostList.h */,
+				A26502FD1C968D7F003D0F23 /* RadioHostList.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A26502F21C968170003D0F23 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A26502FF1C96935A003D0F23 /* RadioHeaderView.h */,
+				A26503001C96935A003D0F23 /* RadioHeaderView.m */,
+				A26503021C969F32003D0F23 /* RadioListCell.h */,
+				A26503031C969F32003D0F23 /* RadioListCell.m */,
+				A26503041C969F32003D0F23 /* RadioListCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A274513F1C7F1D9E009108B1 /* SDWebImage */ = {
@@ -973,6 +1023,10 @@
 		A279BD831C83D07B000B45C7 /* 电台 */ = {
 			isa = PBXGroup;
 			children = (
+				A26502EE1C9680F5003D0F23 /* RadioViewController.h */,
+				A26502EF1C9680F5003D0F23 /* RadioViewController.m */,
+				A26502F11C968170003D0F23 /* Model */,
+				A26502F21C968170003D0F23 /* View */,
 			);
 			path = "电台";
 			sourceTree = "<group>";
@@ -1437,6 +1491,7 @@
 				A274517C1C7F258A009108B1 /* JGProgressHUD Resources.bundle in Resources */,
 				A2C5A3721C86D3EF00020230 /* MJRefresh.bundle in Resources */,
 				A274517A1C7F258A009108B1 /* IDMPhotoBrowser.bundle in Resources */,
+				A26503061C969F32003D0F23 /* RadioListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1471,6 +1526,7 @@
 				A2932B5C1C87C65600049982 /* UIImageView+SDWedImage.m in Sources */,
 				A2C5A37F1C86E4D800020230 /* list.m in Sources */,
 				A275EDFD1C8562DA00526612 /* Carousel.m in Sources */,
+				A26503011C96935A003D0F23 /* RadioHeaderView.m in Sources */,
 				A264D4801C7FEE0D00E11066 /* HMHNavigationController.m in Sources */,
 				A2754E771C7EE447000B5CA0 /* UIViewController+MMDrawerController.m in Sources */,
 				A2C5A36F1C86D3EF00020230 /* MJRefreshGifHeader.m in Sources */,
@@ -1494,6 +1550,7 @@
 				A2C5A3641C86D3EF00020230 /* MJRefreshAutoFooter.m in Sources */,
 				A2B4DEC61C891E6F00216FBD /* LPXQViewController.m in Sources */,
 				A275EE071C85634900526612 /* PKRefreshHeader.m in Sources */,
+				A26502F51C968B56003D0F23 /* RadioCarousel.m in Sources */,
 				A2BF8C051C8D177C00ED9C66 /* ListModel.m in Sources */,
 				A274516A1C7F1D9F009108B1 /* UIButton+WebCache.m in Sources */,
 				A275ED811C85455A00526612 /* NSString+Extension.m in Sources */,
@@ -1531,6 +1588,7 @@
 				A2754E751C7EE447000B5CA0 /* MMDrawerController.m in Sources */,
 				A2754DD61C7E9907000B5CA0 /* AFSecurityPolicy.m in Sources */,
 				A2C5A3711C86D3EF00020230 /* MJRefreshStateHeader.m in Sources */,
+				A26502F81C968B93003D0F23 /* RadioAllList.m in Sources */,
 				A264D48E1C7FEE3800E11066 /* UIBarButtonItem+Helper.m in Sources */,
 				A275EDFF1C8562DA00526612 /* TAAnimatedDotView.m in Sources */,
 				A2C5A3751C86D3EF00020230 /* UIScrollView+MJRefresh.m in Sources */,
@@ -1539,6 +1597,7 @@
 				A2F79EC11C8FFF81007E5388 /* SQHotListModel.m in Sources */,
 				A27451691C7F1D9F009108B1 /* SDWebImagePrefetcher.m in Sources */,
 				A275EE021C8562DA00526612 /* SDCollectionViewCell.m in Sources */,
+				A26502F01C9680F5003D0F23 /* RadioViewController.m in Sources */,
 				A275ED7B1C853C7900526612 /* DropDownMenu.m in Sources */,
 				A27451DD1C7F2E2E009108B1 /* MJProperty.m in Sources */,
 				A2B4DEC31C891E6F00216FBD /* LPListModel.m in Sources */,
@@ -1549,6 +1608,7 @@
 				A2754DD81C7E9907000B5CA0 /* AFURLRequestSerialization.m in Sources */,
 				A275EDFE1C8562DA00526612 /* TAAbstractDotView.m in Sources */,
 				A2BF8C081C8D181200ED9C66 /* NSString+Helper.m in Sources */,
+				A26502FE1C968D7F003D0F23 /* RadioHostList.m in Sources */,
 				A2BF8C6A1C8D8F4600ED9C66 /* SPXQViewController.m in Sources */,
 				A27451E11C7F2E2E009108B1 /* NSObject+MJCoding.m in Sources */,
 				A2F79EB81C8FF93E007E5388 /* SQHotTableViewCell.m in Sources */,
@@ -1575,6 +1635,7 @@
 				A2754E111C7E9907000B5CA0 /* SVIndefiniteAnimatedView.m in Sources */,
 				A275EDFC1C8562DA00526612 /* GoodPorductsViewController.m in Sources */,
 				A2754E741C7EE447000B5CA0 /* MMDrawerBarButtonItem.m in Sources */,
+				A26503051C969F32003D0F23 /* RadioListCell.m in Sources */,
 				A2C5A36A1C86D3EF00020230 /* MJRefreshAutoNormalFooter.m in Sources */,
 				A2BF8C0E1C8D216900ED9C66 /* SPTableViewCell.m in Sources */,
 				A2C5A3971C86F58A00020230 /* SYTitleCell.m in Sources */,
@@ -1589,6 +1650,7 @@
 				A264D48F1C7FEE3800E11066 /* UIColor+Extension.m in Sources */,
 				A2C5A3851C86E98600020230 /* SYBaeTableViewCell.m in Sources */,
 				A27452341C7F4207009108B1 /* PlayMusicView.m in Sources */,
+				A26502FB1C968BC3003D0F23 /* RadioUserInfo.m in Sources */,
 				A2C5A3651C86D3EF00020230 /* MJRefreshBackFooter.m in Sources */,
 				A274516D1C7F1D9F009108B1 /* UIImage+WebP.m in Sources */,
 				A2C5A3741C86D3EF00020230 /* UIScrollView+MJExtension.m in Sources */,

@@ -91,4 +91,11 @@
 
 //返回带换行符的字符串
 + (NSString *)StringHaveNextLine:(NSArray *)array;
+
+
+/**
+ *  调整html返回的字符串的内容格式
+ */
++(NSString*)getHtmlString:(NSString *)routeName;
+
 @end

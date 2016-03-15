@@ -18,6 +18,7 @@
 #import "Readcarousel.h"
 #import "ReadListModel.h"
 #import "ReadPhotoView.h"
+#import "PKRefreshHeader.h"
 
 @interface ReadingViewController ()<SDCycleScrollViewDelegate>
 /**
@@ -40,6 +41,11 @@
  *  放置整体视图的ScrollView
  */
 @property (nonatomic,strong) UIScrollView *mainScrollView;
+/**
+ *  底部的写作按钮
+ */
+@property (nonatomic,strong) UIButton *bottomButton;
+
 
 @end
 
@@ -62,6 +68,9 @@
     //添加等待动画
     self.waitView = [[LoadingView alloc] initWithFrame:self.view.frame];
     [self.waitView showLoadingTo:self.view];
+    
+    //设置下拉刷新控件
+    self.mainScrollView.mj_header = [PKRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
 }
 
 
@@ -90,8 +99,17 @@
     } failure:^(NSError *error) {
         
         [SVProgressHUD showErrorWithStatus:@"网络不给力"];
-        [self.waitView dismiss]; 
+        [self.waitView dismiss];
     }];
+}
+
+
+#pragma mark - 
+#pragma mark - 下拉刷新方法
+- (void)loadNewData
+{
+    [self setupURLRequest];
+    [self.mainScrollView.mj_header endRefreshing];
 }
 
 
@@ -170,6 +188,9 @@
     }
     CGFloat contentSizeH = 180 + 4 * photoH + 5 * padding;
     self.mainScrollView.contentSize = CGSizeMake(0,contentSizeH);
+    
+    [self.mainScrollView addSubview:self.bottomButton];
+    self.bottomButton.frame = CGRectMake(padding, contentSizeH - photoH - padding, SCREENWIDTH - 2*padding, (SCREENWIDTH - 20) / 3);
 }
 
 
@@ -201,6 +222,19 @@
         _mainScrollView.backgroundColor = [UIColor whiteColor];
     }
     return _mainScrollView;
+}
+
+
+- (UIButton *)bottomButton
+{
+    
+    if (!_bottomButton) {
+        _bottomButton = [[UIButton alloc] init];
+        [_bottomButton setImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
+        _bottomButton.contentMode = UIViewContentModeScaleAspectFill;
+        _bottomButton.adjustsImageWhenHighlighted = NO;
+    }
+    return _bottomButton;
 }
 
 @end

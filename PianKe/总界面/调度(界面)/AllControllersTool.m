@@ -17,6 +17,7 @@
 #import "LPViewController.h"
 #import "SPViewController.h"
 #import "SQViewController.h"
+#import "RadioViewController.h"
 
 @interface AllControllersTool ()
 @property (nonatomic,strong) MMDrawerController *drawerController;
@@ -96,6 +97,24 @@
             dispatch_once(&onceToken, ^{
                 GoodPorductsViewController *goodVC = [[GoodPorductsViewController alloc] init];
                 navVC = [[HMHNavigationController alloc] initWithRootViewController:goodVC];
+            });
+            
+            [self.drawerController setCenterViewController:navVC];
+            //切换根控制器
+            [UIApplication sharedApplication].keyWindow.rootViewController = self.drawerController;
+            [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
+            
+            //关闭抽屉控制器
+            [self.drawerController closeDrawerAnimated:YES completion:nil];
+        }
+            break;
+        case 1:
+        {//第一次加载，加载[首页]界面
+            static HMHNavigationController *navVC = nil;
+            static dispatch_once_t onceToken;
+            dispatch_once(&onceToken, ^{
+                RadioViewController *radioVC = [[RadioViewController alloc] init];
+                navVC = [[HMHNavigationController alloc] initWithRootViewController:radioVC];
             });
             
             [self.drawerController setCenterViewController:navVC];

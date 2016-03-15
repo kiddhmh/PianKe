@@ -70,6 +70,8 @@
 #pragma mark - 发送网络请求
 - (void)setupHttpRequest:(NSString *)sort
 {
+    self.hotListFrames = nil;
+    
     NSDictionary *param = @{
                             @"client" : @"1",
                             @"limit" : @"10",
@@ -270,14 +272,15 @@
 {
     if (index == self.FirstSelected) return;
     if (index == 0) {
-        
+        [self.hotTableView.mj_header beginRefreshing];
         [self setupHttpRequest:@"hot"];
-        [self.waitView showLoadingTo:self.view];
+        [self.waitView showLoadingTo:self.hotTableView];
         self.FirstSelected = 0;
     }else if (index == 1){
+        [self.hotTableView.mj_header beginRefreshing];
         [self setupHttpRequest:@"addtime"];
         self.FirstSelected = 0;
-        [self.waitView showLoadingTo:self.view];
+        [self.waitView showLoadingTo:self.hotTableView];
         self.FirstSelected = 1;
     }
 
