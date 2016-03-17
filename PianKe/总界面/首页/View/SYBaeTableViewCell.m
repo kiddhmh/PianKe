@@ -8,6 +8,7 @@
 
 #import "SYBaeTableViewCell.h"
 #import "list.h"
+#import "MusicView.h"
 @implementation SYBaeTableViewCell
 
 /**
@@ -43,9 +44,8 @@
         self.coverImageView = [[UIImageView alloc] init];
         [self.contentView addSubview:self.coverImageView];
         
-        self.MusicView = [[UIView alloc] init];
-        self.MusicView.backgroundColor = [UIColor orangeColor];
-        [self.contentView addSubview:self.MusicView];
+        self.musicView = [[MusicView alloc] init];
+        [self.contentView addSubview:self.musicView];
         
         self.titleLabel = [[UILabel alloc] init];
         self.titleLabel.backgroundColor = [UIColor whiteColor];

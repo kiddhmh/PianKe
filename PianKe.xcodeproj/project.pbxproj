@@ -162,6 +162,14 @@
 		A2F3321D1C8E62D70095B7F2 /* Readcarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F3321C1C8E62D70095B7F2 /* Readcarousel.m */; };
 		A2F332201C8E647F0095B7F2 /* ReadListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F3321F1C8E647F0095B7F2 /* ReadListModel.m */; };
 		A2F332231C8E71C80095B7F2 /* ReadPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F332221C8E71C80095B7F2 /* ReadPhotoView.m */; };
+		A2F353DB1C9A72350068F647 /* 陈奕迅-十年.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2F353D81C9A72350068F647 /* 陈奕迅-十年.mp3 */; };
+		A2F353DC1C9A72350068F647 /* 邓紫棋-泡沫.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2F353D91C9A72350068F647 /* 邓紫棋-泡沫.mp3 */; };
+		A2F353DD1C9A72350068F647 /* 许巍-曾经的你.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2F353DA1C9A72350068F647 /* 许巍-曾经的你.mp3 */; };
+		A2F353DF1C9A72FC0068F647 /* SongList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2F353DE1C9A72FC0068F647 /* SongList.plist */; };
+		A2F3FE041C99045700AD8DE5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F3FE031C99045700AD8DE5 /* AVFoundation.framework */; };
+		A2F3FE491C99089000AD8DE5 /* MusicManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FE461C99089000AD8DE5 /* MusicManager.m */; };
+		A2F3FE4A1C99089000AD8DE5 /* MusicView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FE481C99089000AD8DE5 /* MusicView.m */; };
+		A2F3FE7A1C9957D200AD8DE5 /* SongModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FE791C9957D200AD8DE5 /* SongModel.m */; };
 		A2F79EAD1C8FEE12007E5388 /* SQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F79EAC1C8FEE12007E5388 /* SQViewController.m */; };
 		A2F79EB21C8FF40F007E5388 /* SQHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F79EB11C8FF40F007E5388 /* SQHeaderView.m */; };
 		A2F79EB51C8FF8BE007E5388 /* SQHotTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F79EB41C8FF8BE007E5388 /* SQHotTableView.m */; };
@@ -507,6 +515,17 @@
 		A2F3321F1C8E647F0095B7F2 /* ReadListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadListModel.m; sourceTree = "<group>"; };
 		A2F332211C8E71C80095B7F2 /* ReadPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadPhotoView.h; sourceTree = "<group>"; };
 		A2F332221C8E71C80095B7F2 /* ReadPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadPhotoView.m; sourceTree = "<group>"; };
+		A2F353D81C9A72350068F647 /* 陈奕迅-十年.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "陈奕迅-十年.mp3"; sourceTree = "<group>"; };
+		A2F353D91C9A72350068F647 /* 邓紫棋-泡沫.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "邓紫棋-泡沫.mp3"; sourceTree = "<group>"; };
+		A2F353DA1C9A72350068F647 /* 许巍-曾经的你.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "许巍-曾经的你.mp3"; sourceTree = "<group>"; };
+		A2F353DE1C9A72FC0068F647 /* SongList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SongList.plist; sourceTree = "<group>"; };
+		A2F3FE031C99045700AD8DE5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A2F3FE451C99089000AD8DE5 /* MusicManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicManager.h; path = ../MusicManager.h; sourceTree = "<group>"; };
+		A2F3FE461C99089000AD8DE5 /* MusicManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicManager.m; path = ../MusicManager.m; sourceTree = "<group>"; };
+		A2F3FE471C99089000AD8DE5 /* MusicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicView.h; path = ../MusicView.h; sourceTree = "<group>"; };
+		A2F3FE481C99089000AD8DE5 /* MusicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicView.m; path = ../MusicView.m; sourceTree = "<group>"; };
+		A2F3FE781C9957D200AD8DE5 /* SongModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongModel.h; sourceTree = "<group>"; };
+		A2F3FE791C9957D200AD8DE5 /* SongModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongModel.m; sourceTree = "<group>"; };
 		A2F79EAB1C8FEE12007E5388 /* SQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQViewController.h; sourceTree = "<group>"; };
 		A2F79EAC1C8FEE12007E5388 /* SQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQViewController.m; sourceTree = "<group>"; };
 		A2F79EB01C8FF40F007E5388 /* SQHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQHeaderView.h; sourceTree = "<group>"; };
@@ -526,6 +545,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2F3FE041C99045700AD8DE5 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,6 +738,7 @@
 		A2754CEB1C7E966F000B5CA0 = {
 			isa = PBXGroup;
 			children = (
+				A2F3FE031C99045700AD8DE5 /* AVFoundation.framework */,
 				A2754CF61C7E9670000B5CA0 /* PianKe */,
 				A2754D101C7E9670000B5CA0 /* PianKeTests */,
 				A2754D1B1C7E9670000B5CA0 /* PianKeUITests */,
@@ -755,6 +776,7 @@
 				A2754D081C7E9670000B5CA0 /* Info.plist */,
 				A2754D051C7E9670000B5CA0 /* LaunchScreen.storyboard */,
 				A2754CF81C7E9670000B5CA0 /* main.m */,
+				A2F353DE1C9A72FC0068F647 /* SongList.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -886,6 +908,7 @@
 		A2754E141C7E99CA000B5CA0 /* 总界面 */ = {
 			isa = PBXGroup;
 			children = (
+				A2F3FE441C99089000AD8DE5 /* 音乐 */,
 				A2754E151C7E99CA000B5CA0 /* 启动加载界面 */,
 				A2754E621C7EDA0B000B5CA0 /* 调度(界面) */,
 				A2754E611C7EDA0B000B5CA0 /* 侧滑菜单 */,
@@ -1353,6 +1376,54 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A2F353D71C9A72230068F647 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A2F353D81C9A72350068F647 /* 陈奕迅-十年.mp3 */,
+				A2F353D91C9A72350068F647 /* 邓紫棋-泡沫.mp3 */,
+				A2F353DA1C9A72350068F647 /* 许巍-曾经的你.mp3 */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		A2F3FE441C99089000AD8DE5 /* 音乐 */ = {
+			isa = PBXGroup;
+			children = (
+				A2F353D71C9A72230068F647 /* Resource */,
+				A2F3FE771C99563300AD8DE5 /* Tool */,
+				A2F3FE761C99562400AD8DE5 /* Model */,
+				A2F3FE751C99560900AD8DE5 /* View */,
+			);
+			path = "音乐";
+			sourceTree = "<group>";
+		};
+		A2F3FE751C99560900AD8DE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A2F3FE471C99089000AD8DE5 /* MusicView.h */,
+				A2F3FE481C99089000AD8DE5 /* MusicView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A2F3FE761C99562400AD8DE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A2F3FE781C9957D200AD8DE5 /* SongModel.h */,
+				A2F3FE791C9957D200AD8DE5 /* SongModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A2F3FE771C99563300AD8DE5 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				A2F3FE451C99089000AD8DE5 /* MusicManager.h */,
+				A2F3FE461C99089000AD8DE5 /* MusicManager.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		A2F79EAE1C8FEFB4007E5388 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1483,14 +1554,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2F353DD1C9A72350068F647 /* 许巍-曾经的你.mp3 in Resources */,
 				A2754E121C7E9907000B5CA0 /* SVProgressHUD.bundle in Resources */,
+				A2F353DC1C9A72350068F647 /* 邓紫棋-泡沫.mp3 in Resources */,
 				A2754D071C7E9670000B5CA0 /* LaunchScreen.storyboard in Resources */,
 				A264D49D1C80451200E11066 /* SideMenuCellTableViewCell.xib in Resources */,
 				A2754D041C7E9670000B5CA0 /* Assets.xcassets in Resources */,
 				A2754D021C7E9670000B5CA0 /* Main.storyboard in Resources */,
+				A2F353DF1C9A72FC0068F647 /* SongList.plist in Resources */,
 				A274517C1C7F258A009108B1 /* JGProgressHUD Resources.bundle in Resources */,
 				A2C5A3721C86D3EF00020230 /* MJRefresh.bundle in Resources */,
 				A274517A1C7F258A009108B1 /* IDMPhotoBrowser.bundle in Resources */,
+				A2F353DB1C9A72350068F647 /* 陈奕迅-十年.mp3 in Resources */,
 				A26503061C969F32003D0F23 /* RadioListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1526,6 +1601,7 @@
 				A2932B5C1C87C65600049982 /* UIImageView+SDWedImage.m in Sources */,
 				A2C5A37F1C86E4D800020230 /* list.m in Sources */,
 				A275EDFD1C8562DA00526612 /* Carousel.m in Sources */,
+				A2F3FE4A1C99089000AD8DE5 /* MusicView.m in Sources */,
 				A26503011C96935A003D0F23 /* RadioHeaderView.m in Sources */,
 				A264D4801C7FEE0D00E11066 /* HMHNavigationController.m in Sources */,
 				A2754E771C7EE447000B5CA0 /* UIViewController+MMDrawerController.m in Sources */,
@@ -1591,6 +1667,7 @@
 				A26502F81C968B93003D0F23 /* RadioAllList.m in Sources */,
 				A264D48E1C7FEE3800E11066 /* UIBarButtonItem+Helper.m in Sources */,
 				A275EDFF1C8562DA00526612 /* TAAnimatedDotView.m in Sources */,
+				A2F3FE491C99089000AD8DE5 /* MusicManager.m in Sources */,
 				A2C5A3751C86D3EF00020230 /* UIScrollView+MJRefresh.m in Sources */,
 				A2754DD41C7E9907000B5CA0 /* AFHTTPSessionManager.m in Sources */,
 				A27451641C7F1D9F009108B1 /* SDWebImageCompat.m in Sources */,
@@ -1662,6 +1739,7 @@
 				A275EE031C8562DA00526612 /* SDCycleScrollView.m in Sources */,
 				A2754DD11C7E9907000B5CA0 /* HttpTool.m in Sources */,
 				A27451611C7F1D9E009108B1 /* MKAnnotationView+WebCache.m in Sources */,
+				A2F3FE7A1C9957D200AD8DE5 /* SongModel.m in Sources */,
 				A27451E31C7F2E2E009108B1 /* NSObject+MJProperty.m in Sources */,
 				A279BE131C842634000B45C7 /* HMHTextField.m in Sources */,
 				A2754DE31C7E9907000B5CA0 /* View+MASAdditions.m in Sources */,

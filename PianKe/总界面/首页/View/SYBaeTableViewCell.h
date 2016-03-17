@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class MusicView;
 @class list;
 @interface SYBaeTableViewCell : UITableViewCell
 /**
@@ -20,7 +21,7 @@
 /**
  *  音乐播放视图(如果有的话)
  */
-@property (nonatomic,strong) UIView *MusicView;
+@property (nonatomic,strong) MusicView *musicView;
 /**
  *  标题Label(如果有的话)
  */

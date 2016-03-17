@@ -113,7 +113,6 @@
     
     //设置下拉刷新
     self.tableView.mj_header = [PKRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-    [self.tableView.mj_header beginRefreshing];
     
     //设置上拉加载更多
     self.tableView.mj_footer = [PKRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
@@ -155,10 +154,8 @@
 #pragma mark - 刷新数据
 - (void)loadNewData
 {
-    NSLog(@"刷新数据中");
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.tableView.mj_header endRefreshing];
-    });
+    [self setupURL];
+    
 }
 
 
@@ -189,9 +186,11 @@
         
         [self.tableView reloadData];
         [self.waitView dismiss];
+        [self.tableView.mj_header endRefreshing];
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"网络不给力"];
         [self.waitView dismiss];
+        [self.tableView.mj_header endRefreshing];
     }];
 }
 

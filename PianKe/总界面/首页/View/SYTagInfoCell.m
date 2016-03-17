@@ -11,6 +11,7 @@
 #import "list.h"
 #import "UIImageView+WebCache.h"
 #import "Tag_Info.h"
+#import "MusicView.h"
 @implementation SYTagInfoCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -72,6 +73,7 @@
 
 - (void)setListModel:(list *)listModel
 {
+    self.musicView.hidden = YES;
     self.ennameLabel.text = [NSString stringWithFormat:@"%@·%@",listModel.name,listModel.enname];
     [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:listModel.coverimg] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
     self.contentLabel.text = listModel.content;

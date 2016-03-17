@@ -9,6 +9,7 @@
 #import "SYMusicCell.h"
 #import "list.h"
 #import "Masonry.h"
+#import "MusicView.h"
 @implementation SYMusicCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -32,7 +33,7 @@
         make.height.mas_equalTo(20);
     }];
     
-    [vc.MusicView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [vc.musicView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(vc.ennameLabel.mas_bottom).offset(Padding);
         make.left.equalTo(vc.mas_left).offset(Padding * 2);
         make.right.equalTo(vc.mas_right).offset(-Padding *2);
@@ -65,6 +66,9 @@
     self.ennameLabel.text = [NSString stringWithFormat:@"%@·%@",listModel.name,listModel.enname];
     self.contentLabel.text = listModel.content;
     [self.likeButton setTitle:[NSString stringWithFormat:@"💗%ld",listModel.like] forState:UIControlStateNormal];
+    //换做本地音乐
+//    self.musicView.songid = listModel.songid;
+    self.musicView.songid = arc4random() % 3;
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import "PlayMusicView.h"
 #import "Masonry.h"
+#import "MusicManager.h"
+#import "SongModel.h"
 @interface PlayMusicView ()
 /**
  *  音乐图标
@@ -18,7 +20,22 @@
  *  播放/暂停按钮
  */
 @property (nonatomic,strong) UIButton *playBtn;
-
+/**
+ *  歌手名
+ */
+@property (nonatomic,strong) UILabel *singerLabel;
+/**
+ *  歌曲名
+ */
+@property (nonatomic,strong) UILabel *songNamelabel;
+/**
+ *  歌曲数据模型
+ */
+@property (nonatomic,strong) SongModel *songModel;
+/**
+ *  首页的播放按钮
+ */
+@property (nonatomic,strong) UIButton *SQPlayBtn;
 
 @end
 @implementation PlayMusicView
@@ -27,10 +44,18 @@
 {
     if (self = [super initWithFrame:frame]) {
         [self setupSubViews];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getMusicModel:) name:MHDidPlayMusicNotification object:nil];
     }
     return self;
 }
 
+
+#pragma mark - 移除通知
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.SQPlayBtn removeObserver:self forKeyPath:@"selected"];
+}
 
 #pragma mark - 
 #pragma mark - 初始化方法
@@ -51,6 +76,9 @@
     [btn addTarget:self action:@selector(PlayOrPause) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:btn];
     self.playBtn = btn;
+    
+    [self addSubview:self.singerLabel];
+    [self addSubview:self.songNamelabel];
 }
 
 
@@ -71,6 +99,20 @@
         make.centerY.mas_equalTo(vc.mas_centerY);
         make.right.mas_equalTo(vc.mas_right).offset(-playBtnW);
     }];
+    
+    [vc.songNamelabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(vc.MusicIconImageView.mas_right);
+        make.top.equalTo(vc.MusicIconImageView.mas_top);
+        make.right.equalTo(vc.playBtn.mas_left);
+        make.height.mas_equalTo(20);
+    }];
+    
+    [vc.singerLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(vc.MusicIconImageView.mas_right);
+        make.top.equalTo(vc.songNamelabel.mas_bottom);
+        make.right.equalTo(vc.playBtn.mas_left);
+        make.height.mas_equalTo(20);
+    }];
 }
 
 #pragma mrak -
@@ -78,6 +120,80 @@
 - (void)PlayOrPause
 {
     self.playBtn.selected = ![self.playBtn isSelected];
+    self.SQPlayBtn.selected = self.playBtn.selected;
+    if (self.playBtn.selected) {
+        [self playMusic];
+    }else
+    {
+        [[MusicManager defaultManager] pauseMusic:self.songModel.track_url];
+    }
+}
+
+
+- (void)playMusic
+{
+    MusicManager *manager = [MusicManager defaultManager];
+    [manager playingMusic:self.songModel.track_url];
+}
+
+
+- (void)getMusicModel:(NSNotification *)notification
+{
+    NSDictionary *info = notification.userInfo;
+    self.songModel = info[@"model"];
+    
+    self.SQPlayBtn = info[@"playBtn"];
+    //KVO
+    [self.SQPlayBtn addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:nil];
+    
+    self.playBtn.selected = YES;
+    
+    //设置图片等数据
+    self.MusicIconImageView.image = [UIImage imageNamed:self.songModel.logo];
+    self.singerLabel.text = self.songModel.artist_name;
+    self.songNamelabel.text = self.songModel.song_name;
+}
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"selected"]) {
+        
+        NSInteger NewSelected = [change[@"new"] integerValue];
+        if (NewSelected == 1) {
+            self.playBtn.selected = YES;
+        }else{
+            self.playBtn.selected = NO;
+        }
+    }
+}
+
+
+#pragma mark -
+#pragma mark - 懒加载
+- (UILabel *)songNamelabel
+{
+    if (!_songNamelabel) {
+        _songNamelabel = [[UILabel alloc] init];
+        _songNamelabel.backgroundColor = [UIColor clearColor];
+        _songNamelabel.textColor = [UIColor whiteColor];
+        _songNamelabel.font = [UIFont systemFontOfSize:13];
+        _songNamelabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _songNamelabel;
+}
+
+
+- (UILabel *)singerLabel
+{
+    if (!_singerLabel) {
+        _singerLabel = [[UILabel alloc] init];
+        _singerLabel.backgroundColor = [UIColor clearColor];
+        _singerLabel.textColor = [UIColor whiteColor];
+        _singerLabel.font = [UIFont systemFontOfSize:11];
+        _singerLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _singerLabel;
 }
 
 @end
