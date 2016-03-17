@@ -68,7 +68,7 @@
     [self.likeButton setTitle:[NSString stringWithFormat:@"💗%ld",listModel.like] forState:UIControlStateNormal];
     //换做本地音乐
 //    self.musicView.songid = listModel.songid;
-    self.musicView.songid = arc4random() % 3;
+    self.musicView.songid = arc4random() % 2;
 }
 
 @end

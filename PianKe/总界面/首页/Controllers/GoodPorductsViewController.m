@@ -24,6 +24,8 @@
 #import "SYBaeTableViewCell.h"
 #import "Masonry.h"
 #import "LoadingView.h"
+#import "WebViewController.h"
+
 @interface GoodPorductsViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 /**
  *  首页顶部轮播器图片模型数组
@@ -224,7 +226,10 @@
 #pragma mark - 轮播器代理方法
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
 {
-    NSLog(@"点击第%ld张图片",index);
+    WebViewController *webVC = [[WebViewController alloc] init];
+    Carousel *model = self.carouselImages[index];
+    webVC.url = model.url;
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 
@@ -263,6 +268,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     
 }
 

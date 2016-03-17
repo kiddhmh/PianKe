@@ -19,6 +19,7 @@
 #import "ReadListModel.h"
 #import "ReadPhotoView.h"
 #import "PKRefreshHeader.h"
+#import "WebViewController.h"
 
 @interface ReadingViewController ()<SDCycleScrollViewDelegate>
 /**
@@ -153,6 +154,17 @@
     self.SDscrollView.backgroundColor = [UIColor lightGrayColor];
     
     [self.mainScrollView addSubview:self.SDscrollView];
+}
+
+
+#pragma mark - 轮播器方法
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
+{
+    Readcarousel *model = self.cacheImages[index];
+    WebViewController *webVC = [[WebViewController alloc] init];
+    webVC.url = model.url;
+    
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 

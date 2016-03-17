@@ -22,6 +22,7 @@
 #import "PKRefreshHeader.h"
 #import "PKRefreshFooter.h"
 #import "AFNetworking.h"
+#import "WebViewController.h"
 
 @interface RadioViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) LoadingView *waitView;
@@ -190,6 +191,12 @@
 {
     if (!_radioHeaderView) {
         _radioHeaderView = [[RadioHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREENHEIGHT, (180 + HotImageW + 2 * Margin))];
+        __weak typeof(self)weakSelf = self;
+        _radioHeaderView.block = ^(NSString * url){
+            WebViewController *webVC = [[WebViewController alloc] init];
+            webVC.url = url;
+            [weakSelf.navigationController pushViewController:webVC animated:YES];
+        };
     }
     return _radioHeaderView;
 }

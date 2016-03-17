@@ -152,8 +152,6 @@
     NSInteger second = totalTime % 60;
     self.play_secondsLabel.text = [NSString stringWithFormat:@"%02ld:%02ld",minute,second];
     
-    self.musicProgress.progress = 0;
-    
     //添加定时器
     [self addTimer];
 }
@@ -174,7 +172,7 @@
     NSInteger second = totalTime % 60;
     self.play_secondsLabel.text = [NSString stringWithFormat:@"%02ld:%02ld",minute,second];
     
-    self.musicProgress.progress += 1.0 / self.player.currentTime;
+    self.musicProgress.progress += 1.0 / self.player.duration;
 }
 
 
@@ -299,8 +297,9 @@
 {
     if (!_musicProgress) {
         _musicProgress = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
-        _musicProgress.progressTintColor = [UIColor lightGrayColor];
+        _musicProgress.progressTintColor = [UIColor groupTableViewBackgroundColor];
         _musicProgress.trackTintColor = [UIColor whiteColor];
+        _musicProgress.progress = 0;
     }
     return _musicProgress;
 }

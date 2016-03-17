@@ -108,6 +108,15 @@
 }
 
 
+#pragma mark - 轮播器代理方法
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
+{
+    NSMutableArray *topListArray = self.listArray[0];
+    RadioCarousel *model = topListArray[index];
+    self.block(model.url);
+}
+
+
 #pragma mark - 懒加载
 - (NSMutableArray *)SDImages
 {

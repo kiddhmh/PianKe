@@ -92,7 +92,6 @@
 		A2754E771C7EE447000B5CA0 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2754E731C7EE447000B5CA0 /* UIViewController+MMDrawerController.m */; };
 		A275ED7B1C853C7900526612 /* DropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A275ED7A1C853C7900526612 /* DropDownMenu.m */; };
 		A275ED811C85455A00526612 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A275ED801C85455A00526612 /* NSString+Extension.m */; };
-		A275EDFC1C8562DA00526612 /* GoodPorductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A275EDE71C8562DA00526612 /* GoodPorductsViewController.m */; };
 		A275EDFD1C8562DA00526612 /* Carousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A275EDEA1C8562DA00526612 /* Carousel.m */; };
 		A275EDFE1C8562DA00526612 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = A275EDEF1C8562DA00526612 /* TAAbstractDotView.m */; };
 		A275EDFF1C8562DA00526612 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = A275EDF11C8562DA00526612 /* TAAnimatedDotView.m */; };
@@ -166,6 +165,8 @@
 		A2F353DC1C9A72350068F647 /* 邓紫棋-泡沫.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2F353D91C9A72350068F647 /* 邓紫棋-泡沫.mp3 */; };
 		A2F353DD1C9A72350068F647 /* 许巍-曾经的你.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2F353DA1C9A72350068F647 /* 许巍-曾经的你.mp3 */; };
 		A2F353DF1C9A72FC0068F647 /* SongList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2F353DE1C9A72FC0068F647 /* SongList.plist */; };
+		A2F353E41C9AAD2E0068F647 /* GoodPorductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F353E31C9AAD2E0068F647 /* GoodPorductsViewController.m */; };
+		A2F353EA1C9AAE0C0068F647 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F353E91C9AAE0C0068F647 /* WebViewController.m */; };
 		A2F3FE041C99045700AD8DE5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F3FE031C99045700AD8DE5 /* AVFoundation.framework */; };
 		A2F3FE491C99089000AD8DE5 /* MusicManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FE461C99089000AD8DE5 /* MusicManager.m */; };
 		A2F3FE4A1C99089000AD8DE5 /* MusicView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FE481C99089000AD8DE5 /* MusicView.m */; };
@@ -373,8 +374,6 @@
 		A275ED7A1C853C7900526612 /* DropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownMenu.m; sourceTree = "<group>"; };
 		A275ED7F1C85455A00526612 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		A275ED801C85455A00526612 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
-		A275EDE61C8562DA00526612 /* GoodPorductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodPorductsViewController.h; sourceTree = "<group>"; };
-		A275EDE71C8562DA00526612 /* GoodPorductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodPorductsViewController.m; sourceTree = "<group>"; };
 		A275EDE91C8562DA00526612 /* Carousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Carousel.h; sourceTree = "<group>"; };
 		A275EDEA1C8562DA00526612 /* Carousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Carousel.m; sourceTree = "<group>"; };
 		A275EDEE1C8562DA00526612 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
@@ -519,6 +518,10 @@
 		A2F353D91C9A72350068F647 /* 邓紫棋-泡沫.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "邓紫棋-泡沫.mp3"; sourceTree = "<group>"; };
 		A2F353DA1C9A72350068F647 /* 许巍-曾经的你.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "许巍-曾经的你.mp3"; sourceTree = "<group>"; };
 		A2F353DE1C9A72FC0068F647 /* SongList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SongList.plist; sourceTree = "<group>"; };
+		A2F353E21C9AAD2E0068F647 /* GoodPorductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodPorductsViewController.h; sourceTree = "<group>"; };
+		A2F353E31C9AAD2E0068F647 /* GoodPorductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodPorductsViewController.m; sourceTree = "<group>"; };
+		A2F353E81C9AAE0C0068F647 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		A2F353E91C9AAE0C0068F647 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		A2F3FE031C99045700AD8DE5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A2F3FE451C99089000AD8DE5 /* MusicManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicManager.h; path = ../MusicManager.h; sourceTree = "<group>"; };
 		A2F3FE461C99089000AD8DE5 /* MusicManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicManager.m; path = ../MusicManager.m; sourceTree = "<group>"; };
@@ -973,8 +976,7 @@
 		A275EDE51C8562DA00526612 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
-				A275EDE61C8562DA00526612 /* GoodPorductsViewController.h */,
-				A275EDE71C8562DA00526612 /* GoodPorductsViewController.m */,
+				A2F353E11C9AAD2E0068F647 /* Controllers */,
 				A275EDE81C8562DA00526612 /* Model */,
 				A275EDEB1C8562DA00526612 /* View */,
 			);
@@ -1386,6 +1388,17 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		A2F353E11C9AAD2E0068F647 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A2F353E21C9AAD2E0068F647 /* GoodPorductsViewController.h */,
+				A2F353E31C9AAD2E0068F647 /* GoodPorductsViewController.m */,
+				A2F353E81C9AAE0C0068F647 /* WebViewController.h */,
+				A2F353E91C9AAE0C0068F647 /* WebViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		A2F3FE441C99089000AD8DE5 /* 音乐 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1648,6 +1661,7 @@
 				A264D4981C80290400E11066 /* UIView+Frame.m in Sources */,
 				A2C5A3691C86D3EF00020230 /* MJRefreshAutoGifFooter.m in Sources */,
 				A2B4DEC51C891E6F00216FBD /* LPRootTableViewCell.m in Sources */,
+				A2F353EA1C9AAE0C0068F647 /* WebViewController.m in Sources */,
 				A2754DDF1C7E9907000B5CA0 /* MASViewAttribute.m in Sources */,
 				A27451E01C7F2E2E009108B1 /* NSObject+MJClass.m in Sources */,
 				A2754E131C7E9907000B5CA0 /* SVProgressHUD.m in Sources */,
@@ -1663,6 +1677,7 @@
 				A279BE1D1C8447DE000B45C7 /* RegisterTopView.m in Sources */,
 				A2754E751C7EE447000B5CA0 /* MMDrawerController.m in Sources */,
 				A2754DD61C7E9907000B5CA0 /* AFSecurityPolicy.m in Sources */,
+				A2F353E41C9AAD2E0068F647 /* GoodPorductsViewController.m in Sources */,
 				A2C5A3711C86D3EF00020230 /* MJRefreshStateHeader.m in Sources */,
 				A26502F81C968B93003D0F23 /* RadioAllList.m in Sources */,
 				A264D48E1C7FEE3800E11066 /* UIBarButtonItem+Helper.m in Sources */,
@@ -1710,7 +1725,6 @@
 				A2C5A3821C86E6F600020230 /* Tag_Info.m in Sources */,
 				A27451651C7F1D9F009108B1 /* SDWebImageDecoder.m in Sources */,
 				A2754E111C7E9907000B5CA0 /* SVIndefiniteAnimatedView.m in Sources */,
-				A275EDFC1C8562DA00526612 /* GoodPorductsViewController.m in Sources */,
 				A2754E741C7EE447000B5CA0 /* MMDrawerBarButtonItem.m in Sources */,
 				A26503051C969F32003D0F23 /* RadioListCell.m in Sources */,
 				A2C5A36A1C86D3EF00020230 /* MJRefreshAutoNormalFooter.m in Sources */,
