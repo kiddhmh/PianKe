@@ -10,6 +10,7 @@
 #import "LoadingView.h"
 #import "SVProgressHUD.h"
 #import "UIBarButtonItem+Helper.h"
+#import "AFNetworking.h"
 
 @interface WebViewController ()<UIWebViewDelegate>
 @property (nonatomic,strong) LoadingView *waitView;
@@ -24,21 +25,17 @@
     [self.view addSubview:self.webView];
     self.waitView = [[LoadingView alloc] initWithFrame:self.view.frame];
     
-    self.navigationItem.backBarButtonItem = [UIBarButtonItem itemWithTitle:@"返回" target:self action:@selector(back)];
-    
     [self.waitView showLoadingTo:self.webView];
 }
-
-- (void)back
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 
 - (UIWebView *)webView
 {
     if (!_webView) {
         _webView = [[UIWebView alloc] initWithFrame:self.view.frame];
+        [_webView.scrollView setBounces:NO];
+        _webView.mediaPlaybackAllowsAirPlay= YES;
+        _webView.mediaPlaybackRequiresUserAction = YES;
+        _webView.delegate = self;
     }
     return _webView;
 }
@@ -47,19 +44,31 @@
 - (void)setUrl:(NSString *)url
 {
     _url = url;
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    NSString *newUrl = [NSString stringWithFormat:@"http://%@",url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:newUrl]];
     [self.webView loadRequest:request];
+    
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+//    [manager GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+//        NSLog(@"%@",responseObject);
+//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//        NSLog(@"%@",error);
+//    }];
+    
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     [self.waitView dismiss];
     [SVProgressHUD showErrorWithStatus:@"网络不给力"];
+    NSLog(@"%@",error);
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [self.waitView dismiss];
 }
+
 
 @end

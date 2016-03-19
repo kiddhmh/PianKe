@@ -81,10 +81,13 @@
     if (btn ==self.boyButton) {
         self.boyButton.enabled = NO;
         self.girlButton.enabled = YES;
+        self.xingbie = @"1";
+        
     }else
     {
         self.boyButton.enabled = YES;
         self.girlButton.enabled = NO;
+        self.xingbie = @"2";
     }
 }
 

@@ -13,6 +13,7 @@
 #import "SongModel.h"
 #import "MJExtension.h"
 #import "UIImageView+WebCache.h"
+#import "RadioMusicView.h"
 
 @interface MusicView ()
 /**
@@ -59,6 +60,8 @@
  *  定时器
  */
 @property (nonatomic,strong) NSTimer *timer;
+
+@property (nonatomic,strong) RadioMusicView *musicView;
 
 @end
 
@@ -136,6 +139,9 @@
 #pragma mark - 播放音乐
 - (void)playMusic
 {
+    if (self.musicView.isPlaying) {
+        [[MusicManager defaultManager] pauseAVPlayer];
+    }
     MusicManager *manager = [MusicManager defaultManager];
     self.player = [manager playingMusic:self.songModel.track_url];
     
@@ -182,14 +188,21 @@
     if (self.PlayOrPauseBtn.selected) {
         [self playMusic];
         [self addTimer];
+        self.playing = YES;
     }else
     {
         [[MusicManager defaultManager] pauseMusic:self.songModel.track_url];
         [self.timer invalidate];
+        self.playing = NO;
     }
 }
 
 
+- (void)pause
+{
+    [[MusicManager defaultManager] pauseMusic:self.songModel.track_url];
+    self.playing = NO;
+}
 
 
 #pragma mark - 发送网络请求获取数据
@@ -336,6 +349,15 @@
         _songsArray = temp;
     }
     return _songsArray;
+}
+
+
+- (RadioMusicView *)musicView
+{
+    if (!_musicView) {
+        _musicView = [[RadioMusicView alloc] init];
+    }
+    return _musicView;
 }
 
 @end

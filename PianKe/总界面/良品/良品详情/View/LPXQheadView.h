@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 @class LPXQheadModel;
+@class SQHotListModel;
 @interface LPXQheadView : UIView
 
+@property (nonatomic,strong) SQHotListModel *hotList;
 /**
  *  左上角来自哪里的Button
  */

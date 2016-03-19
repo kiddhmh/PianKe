@@ -23,6 +23,7 @@
 #import "PKRefreshFooter.h"
 #import "AFNetworking.h"
 #import "WebViewController.h"
+#import "RadioSecondViewController.h"
 
 @interface RadioViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) LoadingView *waitView;
@@ -104,9 +105,11 @@
         
         [self.radioTableView reloadData];
         [self.waitView dismiss];
+        [self.radioTableView.mj_header endRefreshing];
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"网络请求超时"];
         [self.waitView dismiss];
+        [self.radioTableView.mj_header endRefreshing];
     }];
     
     
@@ -136,12 +139,19 @@
 }
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    RadioSecondViewController *secondVC = [[RadioSecondViewController alloc] init];
+    RadioAllList *model = self.radioAllListArray[indexPath.row];
+    [secondVC passContentidForRadio:model.radioid];
+
+    [self.navigationController pushViewController:secondVC animated:YES];
+}
+
 #pragma mark - 下拉刷新方法
 - (void)loadNewData
 {
     [self creatUrlRequest];
-    [self.radioTableView.mj_header endRefreshing];
-    
 }
 
 
@@ -181,7 +191,6 @@
         _radioTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _radioTableView.delegate = self;
         _radioTableView.dataSource = self;
-        _radioTableView.allowsSelection = NO;
     }
     return _radioTableView;
 }

@@ -14,6 +14,8 @@
 #import "userinfo.h"
 #import "UIView+Frame.h"
 #import "NSString+Helper.h"
+#import "CoverimgTool.h"
+
 @interface SPXQHeaderView ()
 /**
  *  头像ImageView
@@ -35,6 +37,10 @@
  *  底部的线
  */
 @property (nonatomic,strong) UIView *lineView;
+/**
+ *  配图
+ */
+@property (nonatomic,strong) UIImageView *photoView;
 @end
 @implementation SPXQHeaderView
 
@@ -84,6 +90,11 @@
     self.lineView = [[UIView alloc] init];
     self.lineView.backgroundColor = self.lineView.backgroundColor = RGB(238, 238, 238);
     [self addSubview:self.lineView];
+    
+    self.photoView = [[UIImageView alloc] init];
+    self.photoView.contentMode = UIViewContentModeScaleAspectFill;
+    self.photoView.hidden = YES;
+    [self addSubview:self.photoView];
 }
 
 
@@ -136,6 +147,21 @@
     self.addtimeLabel.text = listModel.addtime_f;
     
     self.contentLabel.text = listModel.content;
+    
+    if ([listModel.coverimg isEqualToString:@""]) {
+        self.photoView.hidden = YES;
+    }else{
+        self.photoView.hidden = NO;
+        [self.photoView sd_setImageWithURL:[NSURL URLWithString:listModel.coverimg] placeholderImage:Placholder];
+        __weak typeof(self)vc = self;
+        CGFloat coverW = SCREENWIDTH - 2 * Padding;
+        CGFloat coverScale = [CoverimgTool sizeWithSizeString:listModel.coverimg_wh];
+        [vc.photoView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(vc.lineView.mas_bottom).offset(Padding);
+            make.centerX.equalTo(vc.mas_centerX);
+            make.size.mas_equalTo(CGSizeMake(coverW, coverScale * coverW));
+        }];
+    }
 }
 
 

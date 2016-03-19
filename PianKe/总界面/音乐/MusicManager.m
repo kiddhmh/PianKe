@@ -7,6 +7,7 @@
 //
 
 #import "MusicManager.h"
+NSString * const MHDidPlayMusicNotification = @"MHDidPlayMusicNotification";
 
 @interface MusicManager ()
 @property (nonatomic, strong) NSMutableDictionary *musicPlayers;
@@ -14,6 +15,7 @@
 @end
 
 static MusicManager *_instance = nil;
+static AVPlayer *player = nil;
 
 @implementation MusicManager
 
@@ -98,6 +100,34 @@ static MusicManager *_instance = nil;
     return player;
 }
 
+
+
+/**
+ *  播放网络音乐
+ */
+- (AVPlayer *)playingURLMusic:(NSString *)urlString
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        player = [[AVPlayer alloc] init];
+    });
+    if (urlString.length == 0) return nil;
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    if (!url) return nil;
+    
+    AVPlayerItem  *playerItem = [AVPlayerItem playerItemWithURL:url];
+    [player replaceCurrentItemWithPlayerItem:playerItem];
+
+    return player;
+}
+
+
+/**
+ *  暂停音乐
+ *
+ */
 - (void)pauseMusic:(NSString *)filename
 {
     if (filename == nil || filename.length == 0)  return;
@@ -166,5 +196,10 @@ static MusicManager *_instance = nil;
     }
 }
 
+
+- (void)pauseAVPlayer
+{
+    [player pause];
+}
 
 @end

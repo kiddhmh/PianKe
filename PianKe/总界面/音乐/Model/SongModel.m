@@ -8,7 +8,6 @@
 
 #import "SongModel.h"
 
-NSString * const MHDidPlayMusicNotification = @"MHDidPlayMusicNotification";
 
 @implementation SongModel
 

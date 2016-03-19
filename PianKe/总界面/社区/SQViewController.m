@@ -21,6 +21,7 @@
 #import "SQHotTableView.h"
 #import "PKRefreshHeader.h"
 #import "PKRefreshFooter.h"
+#import "SQSecondViewController.h"
 
 @interface SQViewController ()<SQHeaderDelegate>
 @property (nonatomic,strong) LoadingView *waitView;
@@ -62,6 +63,13 @@
     
     self.hotTableView.mj_header = [PKRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     self.hotTableView.mj_footer = [PKRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    
+    __weak typeof(self)vc = self;
+    self.hotTableView.block = ^(SQHotListModel *listModel){
+        SQSecondViewController *sqSecondVC = [[SQSecondViewController alloc] init];
+        sqSecondVC.hotList = listModel;
+        [vc.navigationController pushViewController:sqSecondVC animated:YES];
+    };
     
     [self setupHttpRequest:@"hot"];
 }
@@ -189,12 +197,15 @@
         NSArray *newListFrame = [self listFrameWithListModel:hostList];
         
         //先取出数组最前的10个数据
-        NSArray *OldListFrame = [self.hotListFrames subarrayWithRange:NSMakeRange(0, 10)];
-        //进行比较
-        NSArray *resultArray = [self array:newListFrame With:OldListFrame];
-        NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.hotListFrames];
-        [tempArray replaceObjectsInRange:NSMakeRange(0, 10) withObjectsFromArray:resultArray];
-        self.hotListFrames = tempArray;
+
+        if (self.hotListFrames.count != 0) {
+            NSArray *OldListFrame = [self.hotListFrames subarrayWithRange:NSMakeRange(0, 10)];
+            //进行比较
+            NSArray *resultArray = [self array:newListFrame With:OldListFrame];
+            NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.hotListFrames];
+            [tempArray replaceObjectsInRange:NSMakeRange(0, 10) withObjectsFromArray:resultArray];
+        }
+        self.hotListFrames = newListFrame;
         
         self.hotTableView.FrameArray = self.hotListFrames;
         
@@ -272,15 +283,14 @@
 {
     if (index == self.FirstSelected) return;
     if (index == 0) {
+        if ([self.hotTableView.mj_header isRefreshing]) return;
         [self.hotTableView.mj_header beginRefreshing];
         [self setupHttpRequest:@"hot"];
-        [self.waitView showLoadingTo:self.hotTableView];
         self.FirstSelected = 0;
     }else if (index == 1){
+        if ([self.hotTableView.mj_header isRefreshing]) return;
         [self.hotTableView.mj_header beginRefreshing];
         [self setupHttpRequest:@"addtime"];
-        self.FirstSelected = 0;
-        [self.waitView showLoadingTo:self.hotTableView];
         self.FirstSelected = 1;
     }
 

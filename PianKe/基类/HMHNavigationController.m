@@ -8,6 +8,8 @@
 
 #import "HMHNavigationController.h"
 #import "UIColor+Extension.h"
+#import "UIBarButtonItem+Helper.h"
+#import "WebViewController.h"
 @interface HMHNavigationController ()
 
 @end
@@ -58,5 +60,24 @@
 }
 
 
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    if ([viewController isKindOfClass:[WebViewController class]]) {
+        
+        //设置左耳目
+        UIBarButtonItem *left = [UIBarButtonItem itemWithNormalIcon:@"navigationbar_back" highlightedIcon:@"navigationbar_back_highlighted" target:self action:@selector(back)];
+        
+        //添加左耳目
+        viewController.navigationItem.leftBarButtonItem = left;
+    }
+    
+    [super pushViewController:viewController animated:animated];
+}
+
+
+- (void)back
+{
+    [self popViewControllerAnimated:YES];
+}
 
 @end

@@ -17,6 +17,8 @@
 #import "Masonry.h"
 #import "SearchViewController.h"
 #import "LoginViewController.h"
+#import "RadioThirdViewController.h"
+#import "RadioSecondListModel.h"
 
 #define VIEWWIDTH self.view.frame.size.width
 #define VIEWHEIGHT self.view.frame.size.height
@@ -104,6 +106,12 @@
     playMusic.backgroundColor = RGB(28, 28, 28);
     [self.view addSubview:playMusic];
     self.playMusicView = playMusic;
+    __weak typeof(self)vc = self;
+    self.playMusicView.block = ^(RadioSecondListModel *listModel){
+        RadioThirdViewController *thirdVC = [[RadioThirdViewController alloc] init];
+        [thirdVC passModel:listModel andName:@""];
+        [vc presentViewController:thirdVC animated:YES completion:nil];
+    };
     
     //自动适配
     [self setupConstrain];

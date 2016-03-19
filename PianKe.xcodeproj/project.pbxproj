@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A239D7301C9D25FA002EEE09 /* RadioThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A239D72F1C9D25FA002EEE09 /* RadioThirdViewController.m */; };
+		A239D7351C9D281A002EEE09 /* RadioMusicView.m in Sources */ = {isa = PBXBuildFile; fileRef = A239D7341C9D281A002EEE09 /* RadioMusicView.m */; };
 		A264D4801C7FEE0D00E11066 /* HMHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A264D47F1C7FEE0D00E11066 /* HMHNavigationController.m */; };
 		A264D4871C7FEE2400E11066 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A264D4831C7FEE2400E11066 /* SettingsViewController.m */; };
 		A264D4881C7FEE2400E11066 /* ReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A264D4861C7FEE2400E11066 /* ReadingViewController.m */; };
@@ -101,6 +103,17 @@
 		A275EE031C8562DA00526612 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A275EDF91C8562DA00526612 /* SDCycleScrollView.m */; };
 		A275EE041C8562DA00526612 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A275EDFB1C8562DA00526612 /* UIView+SDExtension.m */; };
 		A275EE071C85634900526612 /* PKRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A275EE061C85634900526612 /* PKRefreshHeader.m */; };
+		A275F18B1C9B8944005BEF25 /* RadioSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A275F18A1C9B8944005BEF25 /* RadioSecondViewController.m */; };
+		A275F1C31C9B8998005BEF25 /* ReadSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A275F1C21C9B8998005BEF25 /* ReadSecondViewController.m */; };
+		A275F1C81C9B89DF005BEF25 /* SQSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A275F1C71C9B89DF005BEF25 /* SQSecondViewController.m */; };
+		A275F1CB1C9B97D8005BEF25 /* RadioSecondHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A275F1CA1C9B97D8005BEF25 /* RadioSecondHeaderView.m */; };
+		A275F1CF1C9B9D62005BEF25 /* RadioSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A275F1CD1C9B9D62005BEF25 /* RadioSecondCell.m */; };
+		A275F1D01C9B9D62005BEF25 /* RadioSecondCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A275F1CE1C9B9D62005BEF25 /* RadioSecondCell.xib */; };
+		A275F1D41C9BA62D005BEF25 /* ReadSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A275F1D21C9BA62D005BEF25 /* ReadSecondCell.m */; };
+		A275F1D51C9BA62D005BEF25 /* ReadSecondCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A275F1D31C9BA62D005BEF25 /* ReadSecondCell.xib */; };
+		A275F1D81C9BCB89005BEF25 /* RadioSecondRadioInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A275F1D71C9BCB89005BEF25 /* RadioSecondRadioInfo.m */; };
+		A275F1DB1C9BCD70005BEF25 /* RadioSecondListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A275F1DA1C9BCD70005BEF25 /* RadioSecondListModel.m */; };
+		A275F1DE1C9BE3FE005BEF25 /* ReadSecondListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A275F1DD1C9BE3FE005BEF25 /* ReadSecondListModel.m */; };
 		A279BDF21C840A59000B45C7 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A279BDF11C840A59000B45C7 /* SearchViewController.m */; };
 		A279BDF81C840D5B000B45C7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A279BDF71C840D5B000B45C7 /* LoginViewController.m */; };
 		A279BDFC1C840FAA000B45C7 /* TopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A279BDFB1C840FAA000B45C7 /* TopView.m */; };
@@ -197,6 +210,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A239D72E1C9D25FA002EEE09 /* RadioThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioThirdViewController.h; sourceTree = "<group>"; };
+		A239D72F1C9D25FA002EEE09 /* RadioThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioThirdViewController.m; sourceTree = "<group>"; };
+		A239D7331C9D281A002EEE09 /* RadioMusicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioMusicView.h; sourceTree = "<group>"; };
+		A239D7341C9D281A002EEE09 /* RadioMusicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioMusicView.m; sourceTree = "<group>"; };
 		A24D729F1C8090A500FFB3CF /* PKPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKPrefixHeader.pch; sourceTree = "<group>"; };
 		A264D47E1C7FEE0D00E11066 /* HMHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHNavigationController.h; sourceTree = "<group>"; };
 		A264D47F1C7FEE0D00E11066 /* HMHNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHNavigationController.m; sourceTree = "<group>"; };
@@ -392,6 +409,26 @@
 		A275EDFB1C8562DA00526612 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
 		A275EE051C85634900526612 /* PKRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKRefreshHeader.h; sourceTree = "<group>"; };
 		A275EE061C85634900526612 /* PKRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKRefreshHeader.m; sourceTree = "<group>"; };
+		A275F1891C9B8944005BEF25 /* RadioSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioSecondViewController.h; sourceTree = "<group>"; };
+		A275F18A1C9B8944005BEF25 /* RadioSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioSecondViewController.m; sourceTree = "<group>"; };
+		A275F1C11C9B8998005BEF25 /* ReadSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadSecondViewController.h; sourceTree = "<group>"; };
+		A275F1C21C9B8998005BEF25 /* ReadSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadSecondViewController.m; sourceTree = "<group>"; };
+		A275F1C61C9B89DF005BEF25 /* SQSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQSecondViewController.h; sourceTree = "<group>"; };
+		A275F1C71C9B89DF005BEF25 /* SQSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQSecondViewController.m; sourceTree = "<group>"; };
+		A275F1C91C9B97D8005BEF25 /* RadioSecondHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioSecondHeaderView.h; sourceTree = "<group>"; };
+		A275F1CA1C9B97D8005BEF25 /* RadioSecondHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioSecondHeaderView.m; sourceTree = "<group>"; };
+		A275F1CC1C9B9D62005BEF25 /* RadioSecondCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioSecondCell.h; sourceTree = "<group>"; };
+		A275F1CD1C9B9D62005BEF25 /* RadioSecondCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioSecondCell.m; sourceTree = "<group>"; };
+		A275F1CE1C9B9D62005BEF25 /* RadioSecondCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioSecondCell.xib; sourceTree = "<group>"; };
+		A275F1D11C9BA62D005BEF25 /* ReadSecondCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadSecondCell.h; sourceTree = "<group>"; };
+		A275F1D21C9BA62D005BEF25 /* ReadSecondCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadSecondCell.m; sourceTree = "<group>"; };
+		A275F1D31C9BA62D005BEF25 /* ReadSecondCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadSecondCell.xib; sourceTree = "<group>"; };
+		A275F1D61C9BCB89005BEF25 /* RadioSecondRadioInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioSecondRadioInfo.h; sourceTree = "<group>"; };
+		A275F1D71C9BCB89005BEF25 /* RadioSecondRadioInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioSecondRadioInfo.m; sourceTree = "<group>"; };
+		A275F1D91C9BCD70005BEF25 /* RadioSecondListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioSecondListModel.h; sourceTree = "<group>"; };
+		A275F1DA1C9BCD70005BEF25 /* RadioSecondListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioSecondListModel.m; sourceTree = "<group>"; };
+		A275F1DC1C9BE3FE005BEF25 /* ReadSecondListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadSecondListModel.h; sourceTree = "<group>"; };
+		A275F1DD1C9BE3FE005BEF25 /* ReadSecondListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadSecondListModel.m; sourceTree = "<group>"; };
 		A279BDF01C840A59000B45C7 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		A279BDF11C840A59000B45C7 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		A279BDF61C840D5B000B45C7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -569,6 +606,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A239D72D1C9D25B3002EEE09 /* 电台三级页面 */ = {
+			isa = PBXGroup;
+			children = (
+				A239D72E1C9D25FA002EEE09 /* RadioThirdViewController.h */,
+				A239D72F1C9D25FA002EEE09 /* RadioThirdViewController.m */,
+				A239D7311C9D26E1002EEE09 /* Model */,
+				A239D7321C9D26E1002EEE09 /* View */,
+			);
+			path = "电台三级页面";
+			sourceTree = "<group>";
+		};
+		A239D7311C9D26E1002EEE09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A239D7321C9D26E1002EEE09 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A239D7331C9D281A002EEE09 /* RadioMusicView.h */,
+				A239D7341C9D281A002EEE09 /* RadioMusicView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A24D729C1C808DBF00FFB3CF /* 其它 */ = {
 			isa = PBXGroup;
 			children = (
@@ -608,6 +672,7 @@
 				A264D4861C7FEE2400E11066 /* ReadingViewController.m */,
 				A2F332191C8E5EFD0095B7F2 /* Model */,
 				A2F3321A1C8E5EFD0095B7F2 /* View */,
+				A275F1851C9B88A6005BEF25 /* 阅读二级页面 */,
 			);
 			path = "阅读";
 			sourceTree = "<group>";
@@ -1045,6 +1110,95 @@
 			path = PageControl;
 			sourceTree = "<group>";
 		};
+		A275F1841C9B8889005BEF25 /* 电台二级页面 */ = {
+			isa = PBXGroup;
+			children = (
+				A275F1891C9B8944005BEF25 /* RadioSecondViewController.h */,
+				A275F18A1C9B8944005BEF25 /* RadioSecondViewController.m */,
+				A275F1871C9B8931005BEF25 /* Model */,
+				A275F1881C9B8931005BEF25 /* View */,
+			);
+			path = "电台二级页面";
+			sourceTree = "<group>";
+		};
+		A275F1851C9B88A6005BEF25 /* 阅读二级页面 */ = {
+			isa = PBXGroup;
+			children = (
+				A275F1C11C9B8998005BEF25 /* ReadSecondViewController.h */,
+				A275F1C21C9B8998005BEF25 /* ReadSecondViewController.m */,
+				A275F1BF1C9B8988005BEF25 /* Model */,
+				A275F1C01C9B8988005BEF25 /* View */,
+			);
+			path = "阅读二级页面";
+			sourceTree = "<group>";
+		};
+		A275F1861C9B88C6005BEF25 /* 社区二级页面 */ = {
+			isa = PBXGroup;
+			children = (
+				A275F1C61C9B89DF005BEF25 /* SQSecondViewController.h */,
+				A275F1C71C9B89DF005BEF25 /* SQSecondViewController.m */,
+				A275F1C41C9B89D4005BEF25 /* Model */,
+				A275F1C51C9B89D4005BEF25 /* View */,
+			);
+			path = "社区二级页面";
+			sourceTree = "<group>";
+		};
+		A275F1871C9B8931005BEF25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A275F1D61C9BCB89005BEF25 /* RadioSecondRadioInfo.h */,
+				A275F1D71C9BCB89005BEF25 /* RadioSecondRadioInfo.m */,
+				A275F1D91C9BCD70005BEF25 /* RadioSecondListModel.h */,
+				A275F1DA1C9BCD70005BEF25 /* RadioSecondListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A275F1881C9B8931005BEF25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A275F1C91C9B97D8005BEF25 /* RadioSecondHeaderView.h */,
+				A275F1CA1C9B97D8005BEF25 /* RadioSecondHeaderView.m */,
+				A275F1CC1C9B9D62005BEF25 /* RadioSecondCell.h */,
+				A275F1CD1C9B9D62005BEF25 /* RadioSecondCell.m */,
+				A275F1CE1C9B9D62005BEF25 /* RadioSecondCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A275F1BF1C9B8988005BEF25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A275F1DC1C9BE3FE005BEF25 /* ReadSecondListModel.h */,
+				A275F1DD1C9BE3FE005BEF25 /* ReadSecondListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A275F1C01C9B8988005BEF25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A275F1D11C9BA62D005BEF25 /* ReadSecondCell.h */,
+				A275F1D21C9BA62D005BEF25 /* ReadSecondCell.m */,
+				A275F1D31C9BA62D005BEF25 /* ReadSecondCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A275F1C41C9B89D4005BEF25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A275F1C51C9B89D4005BEF25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A279BD831C83D07B000B45C7 /* 电台 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1052,6 +1206,8 @@
 				A26502EF1C9680F5003D0F23 /* RadioViewController.m */,
 				A26502F11C968170003D0F23 /* Model */,
 				A26502F21C968170003D0F23 /* View */,
+				A275F1841C9B8889005BEF25 /* 电台二级页面 */,
+				A239D72D1C9D25B3002EEE09 /* 电台三级页面 */,
 			);
 			path = "电台";
 			sourceTree = "<group>";
@@ -1063,6 +1219,7 @@
 				A2F79EAC1C8FEE12007E5388 /* SQViewController.m */,
 				A2F79EAE1C8FEFB4007E5388 /* Model */,
 				A2F79EAF1C8FEFB4007E5388 /* View */,
+				A275F1861C9B88C6005BEF25 /* 社区二级页面 */,
 			);
 			path = "社区";
 			sourceTree = "<group>";
@@ -1572,11 +1729,13 @@
 				A2F353DC1C9A72350068F647 /* 邓紫棋-泡沫.mp3 in Resources */,
 				A2754D071C7E9670000B5CA0 /* LaunchScreen.storyboard in Resources */,
 				A264D49D1C80451200E11066 /* SideMenuCellTableViewCell.xib in Resources */,
+				A275F1D01C9B9D62005BEF25 /* RadioSecondCell.xib in Resources */,
 				A2754D041C7E9670000B5CA0 /* Assets.xcassets in Resources */,
 				A2754D021C7E9670000B5CA0 /* Main.storyboard in Resources */,
 				A2F353DF1C9A72FC0068F647 /* SongList.plist in Resources */,
 				A274517C1C7F258A009108B1 /* JGProgressHUD Resources.bundle in Resources */,
 				A2C5A3721C86D3EF00020230 /* MJRefresh.bundle in Resources */,
+				A275F1D51C9BA62D005BEF25 /* ReadSecondCell.xib in Resources */,
 				A274517A1C7F258A009108B1 /* IDMPhotoBrowser.bundle in Resources */,
 				A2F353DB1C9A72350068F647 /* 陈奕迅-十年.mp3 in Resources */,
 				A26503061C969F32003D0F23 /* RadioListCell.xib in Resources */,
@@ -1608,9 +1767,11 @@
 				A2C5A3671C86D3EF00020230 /* MJRefreshFooter.m in Sources */,
 				A275EE001C8562DA00526612 /* TADotView.m in Sources */,
 				A274516B1C7F1D9F009108B1 /* UIImage+GIF.m in Sources */,
+				A275F1D81C9BCB89005BEF25 /* RadioSecondRadioInfo.m in Sources */,
 				A27451DC1C7F2E2E009108B1 /* MJFoundation.m in Sources */,
 				A2F79EB21C8FF40F007E5388 /* SQHeaderView.m in Sources */,
 				A2C5A3941C86F57000020230 /* SYMusicCell.m in Sources */,
+				A275F1CB1C9B97D8005BEF25 /* RadioSecondHeaderView.m in Sources */,
 				A2932B5C1C87C65600049982 /* UIImageView+SDWedImage.m in Sources */,
 				A2C5A37F1C86E4D800020230 /* list.m in Sources */,
 				A275EDFD1C8562DA00526612 /* Carousel.m in Sources */,
@@ -1620,6 +1781,7 @@
 				A2754E771C7EE447000B5CA0 /* UIViewController+MMDrawerController.m in Sources */,
 				A2C5A36F1C86D3EF00020230 /* MJRefreshGifHeader.m in Sources */,
 				A2F79EB51C8FF8BE007E5388 /* SQHotTableView.m in Sources */,
+				A275F1DE1C9BE3FE005BEF25 /* ReadSecondListModel.m in Sources */,
 				A2754DD21C7E9907000B5CA0 /* AFHTTPRequestOperation.m in Sources */,
 				A275EE011C8562DA00526612 /* TAPageControl.m in Sources */,
 				A2C5A3681C86D3EF00020230 /* MJRefreshHeader.m in Sources */,
@@ -1638,6 +1800,7 @@
 				A27452311C7F3E03009108B1 /* LeftMenuViewController.m in Sources */,
 				A2C5A3641C86D3EF00020230 /* MJRefreshAutoFooter.m in Sources */,
 				A2B4DEC61C891E6F00216FBD /* LPXQViewController.m in Sources */,
+				A275F1D41C9BA62D005BEF25 /* ReadSecondCell.m in Sources */,
 				A275EE071C85634900526612 /* PKRefreshHeader.m in Sources */,
 				A26502F51C968B56003D0F23 /* RadioCarousel.m in Sources */,
 				A2BF8C051C8D177C00ED9C66 /* ListModel.m in Sources */,
@@ -1679,6 +1842,7 @@
 				A2754DD61C7E9907000B5CA0 /* AFSecurityPolicy.m in Sources */,
 				A2F353E41C9AAD2E0068F647 /* GoodPorductsViewController.m in Sources */,
 				A2C5A3711C86D3EF00020230 /* MJRefreshStateHeader.m in Sources */,
+				A275F1C81C9B89DF005BEF25 /* SQSecondViewController.m in Sources */,
 				A26502F81C968B93003D0F23 /* RadioAllList.m in Sources */,
 				A264D48E1C7FEE3800E11066 /* UIBarButtonItem+Helper.m in Sources */,
 				A275EDFF1C8562DA00526612 /* TAAnimatedDotView.m in Sources */,
@@ -1703,6 +1867,9 @@
 				A26502FE1C968D7F003D0F23 /* RadioHostList.m in Sources */,
 				A2BF8C6A1C8D8F4600ED9C66 /* SPXQViewController.m in Sources */,
 				A27451E11C7F2E2E009108B1 /* NSObject+MJCoding.m in Sources */,
+				A275F18B1C9B8944005BEF25 /* RadioSecondViewController.m in Sources */,
+				A275F1CF1C9B9D62005BEF25 /* RadioSecondCell.m in Sources */,
+				A275F1DB1C9BCD70005BEF25 /* RadioSecondListModel.m in Sources */,
 				A2F79EB81C8FF93E007E5388 /* SQHotTableViewCell.m in Sources */,
 				A2754DDA1C7E9907000B5CA0 /* AFURLSessionManager.m in Sources */,
 				A2BF8BFC1C8D0DD200ED9C66 /* SPViewController.m in Sources */,
@@ -1714,6 +1881,7 @@
 				A2754DDD1C7E9907000B5CA0 /* MASConstraintMaker.m in Sources */,
 				A27451661C7F1D9F009108B1 /* SDWebImageDownloader.m in Sources */,
 				A2B4DEAC1C89155E00216FBD /* NSString+ChangeHtmlString.m in Sources */,
+				A239D7301C9D25FA002EEE09 /* RadioThirdViewController.m in Sources */,
 				A27451E21C7F2E2E009108B1 /* NSObject+MJKeyValue.m in Sources */,
 				A2F79EBE1C8FFA7A007E5388 /* SQHotListFrameModel.m in Sources */,
 				A2C5A2061C86BB3300020230 /* LoadingView.m in Sources */,
@@ -1736,6 +1904,7 @@
 				A279BDF81C840D5B000B45C7 /* LoginViewController.m in Sources */,
 				A2B4DEC41C891E6F00216FBD /* LPRootModel.m in Sources */,
 				A2F332201C8E647F0095B7F2 /* ReadListModel.m in Sources */,
+				A239D7351C9D281A002EEE09 /* RadioMusicView.m in Sources */,
 				A279BE201C84553E000B45C7 /* RegisterBottomView.m in Sources */,
 				A2754E181C7E9A4B000B5CA0 /* PKLaunchingViewController.m in Sources */,
 				A264D48F1C7FEE3800E11066 /* UIColor+Extension.m in Sources */,
@@ -1747,6 +1916,7 @@
 				A2C5A3741C86D3EF00020230 /* UIScrollView+MJExtension.m in Sources */,
 				A274516F1C7F1D9F009108B1 /* UIImageView+WebCache.m in Sources */,
 				A2C5A36E1C86D3EF00020230 /* MJRefreshBackStateFooter.m in Sources */,
+				A275F1C31C9B8998005BEF25 /* ReadSecondViewController.m in Sources */,
 				A2BF8BFF1C8D169800ED9C66 /* userinfo.m in Sources */,
 				A274516E1C7F1D9F009108B1 /* UIImageView+HighlightedWebCache.m in Sources */,
 				A2754DDC1C7E9907000B5CA0 /* MASConstraint.m in Sources */,

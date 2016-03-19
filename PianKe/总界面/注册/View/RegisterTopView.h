@@ -17,6 +17,8 @@
  *  头像图片
  */
 @property (nonatomic,strong) UIImageView *iconImageView;
-
-
+/**
+ *  性别
+ */
+@property (nonatomic,strong) NSString *xingbie;
 @end

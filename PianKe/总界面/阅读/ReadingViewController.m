@@ -20,6 +20,7 @@
 #import "ReadPhotoView.h"
 #import "PKRefreshHeader.h"
 #import "WebViewController.h"
+#import "ReadSecondViewController.h"
 
 @interface ReadingViewController ()<SDCycleScrollViewDelegate>
 /**
@@ -181,7 +182,12 @@
         photoView.coverimg = model.coverimg;
         photoView.name = model.name;
         photoView.enname = model.enname;
+        photoView.userInteractionEnabled = YES;
+        photoView.tag = index;
         [self.mainScrollView addSubview:photoView];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(GoToNextVC:)];
+        [photoView addGestureRecognizer:tap];
         
         if (index == 10) {
             CGFloat photobigX = padding;
@@ -205,6 +211,22 @@
     self.bottomButton.frame = CGRectMake(padding, contentSizeH - photoH - padding, SCREENWIDTH - 2*padding, (SCREENWIDTH - 20) / 3);
 }
 
+
+#pragma mark - 跳转到二级页面
+- (void)GoToNextVC:(UITapGestureRecognizer *)tap
+{
+    NSInteger index = tap.view.tag;
+    ReadListModel *model;
+    ReadSecondViewController *secondVC = [[ReadSecondViewController alloc] init];
+    if (index == 10) {
+        model = self.ReadListArray[0];
+        secondVC.typeID = [NSString stringWithFormat:@"%ld",model.type];
+    }else{
+    model = self.ReadListArray[index];
+    secondVC.typeID = [NSString stringWithFormat:@"%ld",model.type];
+    }
+    [self.navigationController pushViewController:secondVC animated:YES];
+}
 
 #pragma mark -
 #pragma mark - 懒加载

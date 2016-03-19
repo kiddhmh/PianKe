@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class RadioSecondListModel;
+typedef  void(^Block)(RadioSecondListModel *);
 @interface PlayMusicView : UIView
-
+@property (nonatomic,copy) Block block;
 @end

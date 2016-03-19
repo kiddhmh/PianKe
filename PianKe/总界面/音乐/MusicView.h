@@ -13,5 +13,8 @@
  *  歌曲序号
  */
 @property (nonatomic,assign) NSUInteger songid;
+@property (nonatomic,assign,getter=isPlaying) BOOL playing;
+
+- (void)pause;
 
 @end

@@ -58,6 +58,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //点击对应额cell跳转到二级页面
+    SQHotListFrameModel *FrameModel = self.FrameArray[indexPath.row];
+    self.block(FrameModel.hotListModel);
 }
 
 

@@ -14,6 +14,7 @@
 #import "HMHTextField.h"
 #import "DropDownMenu.h"
 #import "NSString+Extension.h"
+#import "HttpTool.h"
 @interface RegisterViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 /**
  *  上部分视图
@@ -23,6 +24,10 @@
  *  下部分视图
  */
 @property (nonatomic,strong) RegisterBottomView *bottomView;
+/**
+ *  头像文件名
+ */
+@property (nonatomic,strong) NSString *imageFile;
 
 @end
 
@@ -34,6 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.imageFile = @"头像";
     
     [self.view addSubview:self.topView];
     [self.topView.backBtn addTarget:self action:@selector(backTo) forControlEvents:UIControlEventTouchUpInside];
@@ -123,10 +129,39 @@
     //先进行判断，三个文本框是否都输入文字
     if ([self isRight]) {
         NSLog(@"注册成功");
+            NSDictionary *dic = @{@"client":@"1",
+                                  @"deviceid":@"A55AF7DB-88C8-408D-B983-D0B9C9CA0B36",
+                                  @"email":_bottomView.YXTextField.text,
+                                  @"gender":_topView.xingbie,
+                                  @"passwd":_bottomView.MMTextField.text,
+                                  @"uname":_bottomView.nameTextField.text,
+                                  @"version":@"3.0.6",
+                                  @"auth":@"",
+                                  @"iconfile":_imageFile};
         
-    }else
-    {
-        NSLog(@"注册失败");
+       AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"pplication/x-javascript"];
+        [manager POST:@"http://api2.pianke.me/user/reg" parameters:dic constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+            
+            if ([_imageFile isEqualToString:@"头像"]) return;
+            else{
+                
+                UIImage *postImage = [UIImage imageWithContentsOfFile:_imageFile];
+                NSData *imageData = UIImageJPEGRepresentation(postImage, 0.1);
+                [formData appendPartWithFileData:imageData name:@"iconfile" fileName:_imageFile    mimeType:@"image/png"];
+            }
+            
+        } success:^(NSURLSessionDataTask *task, id responseObject) {
+            
+            NSString *errorStr = [[responseObject objectForKey:@"data"] objectForKey:@"msg"];
+            if (errorStr != nil) {
+                [DropDownMenu showWith:errorStr to:self.view belowSubView:self.view];
+            }
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
+            [SVProgressHUD showErrorWithStatus:@"图片上传失败"];
+        }];
     }
 }
 
@@ -256,6 +291,13 @@
 {
     //获取编辑过的照片，设置头像
     UIImage *iconImage = info[UIImagePickerControllerEditedImage];
+    //将图片写入沙盒
+    NSString *homePath = [NSHomeDirectory() stringByAppendingString:@"/Documents"];
+    
+    NSString *imageViews   = [homePath stringByAppendingFormat:@"/%d.png", arc4random_uniform(1000000)];
+    [UIImageJPEGRepresentation(iconImage, 1.0f) writeToFile:imageViews atomically:YES];
+    self.imageFile = imageViews;
+
     self.topView.iconImageView.image = iconImage;
     self.topView.iconImageView.layer.cornerRadius = 28;
     self.topView.iconImageView.layer.masksToBounds = YES;

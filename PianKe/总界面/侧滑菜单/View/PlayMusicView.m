@@ -10,6 +10,8 @@
 #import "Masonry.h"
 #import "MusicManager.h"
 #import "SongModel.h"
+#import "RadioSecondListModel.h"
+#import "UIImageView+WebCache.h"
 @interface PlayMusicView ()
 /**
  *  音乐图标
@@ -33,10 +35,19 @@
  */
 @property (nonatomic,strong) SongModel *songModel;
 /**
+ *  网络歌曲的模型
+ */
+@property (nonatomic,strong) RadioSecondListModel *listModel;
+/**
  *  首页的播放按钮
  */
 @property (nonatomic,strong) UIButton *SQPlayBtn;
+/**
+ *  当前播放进度
+ */
+@property (nonatomic,assign) CMTime currTime;
 
+@property (nonatomic,strong) AVPlayer *player;
 @end
 @implementation PlayMusicView
 
@@ -45,8 +56,17 @@
     if (self = [super initWithFrame:frame]) {
         [self setupSubViews];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getMusicModel:) name:MHDidPlayMusicNotification object:nil];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(GoToRadio)];
+        [self addGestureRecognizer:tap];
     }
     return self;
+}
+
+
+- (void)GoToRadio
+{
+    if (self.songModel) return;
+    self.block(self.listModel);
 }
 
 
@@ -72,7 +92,6 @@
     [btn setImage:[UIImage imageNamed:@"播放"] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:@"暂停"] forState:UIControlStateSelected];
     btn.selected = NO;
-//    [btn setBackgroundColor:[UIColor whiteColor]];
     [btn addTarget:self action:@selector(PlayOrPause) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:btn];
     self.playBtn = btn;
@@ -126,6 +145,8 @@
     }else
     {
         [[MusicManager defaultManager] pauseMusic:self.songModel.track_url];
+        [self.player pause];
+        self.currTime = self.player.currentTime;
     }
 }
 
@@ -133,25 +154,40 @@
 - (void)playMusic
 {
     MusicManager *manager = [MusicManager defaultManager];
-    [manager playingMusic:self.songModel.track_url];
+    if (self.songModel) {
+        [manager playingMusic:self.songModel.track_url];
+        self.listModel = nil;
+    }else{
+        [self.player seekToTime:self.currTime];
+        [self.player play];
+        self.songModel = nil;
+    }
 }
 
 
 - (void)getMusicModel:(NSNotification *)notification
 {
     NSDictionary *info = notification.userInfo;
-    self.songModel = info[@"model"];
-    
-    self.SQPlayBtn = info[@"playBtn"];
+    id obj = info[@"model"];
+    if ([obj isKindOfClass:[SongModel class]]) {  //如果是本地音乐
+        self.songModel = obj;
+        self.SQPlayBtn = info[@"playBtn"];
+        
+        //设置图片等数据
+        self.MusicIconImageView.image = [UIImage imageNamed:self.songModel.logo];
+        self.singerLabel.text = self.songModel.artist_name;
+        self.songNamelabel.text = self.songModel.song_name;
+    }else{
+        self.listModel = obj;
+        [self.MusicIconImageView sd_setImageWithURL:[NSURL URLWithString:self.listModel.coverimg] placeholderImage:Placholder];
+        self.singerLabel.text = info[@"uname"];
+        self.songNamelabel.text = self.listModel.title;
+        self.player = info[@"player"];
+    }
     //KVO
     [self.SQPlayBtn addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:nil];
     
     self.playBtn.selected = YES;
-    
-    //设置图片等数据
-    self.MusicIconImageView.image = [UIImage imageNamed:self.songModel.logo];
-    self.singerLabel.text = self.songModel.artist_name;
-    self.songNamelabel.text = self.songModel.song_name;
 }
 
 

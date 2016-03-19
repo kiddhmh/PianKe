@@ -10,6 +10,10 @@
 #import "LPXQheadModel.h"
 #import "Masonry.h"
 #import "UIImageView+SDWedImage.h"
+#import "UIImageView+WebCache.h"
+#import "SQHotListModel.h"
+#import "userinfo.h"
+#import "SQHotListModel.h"
 @implementation LPXQheadView
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -26,7 +30,7 @@
         [_louzhuLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(vc.louzhuImageView.mas_right).offset(10);
             make.centerY.equalTo(vc.louzhuImageView.mas_centerY);
-            make.size.mas_equalTo(CGSizeMake(SCREENWIDTH * 0.15, 20));
+            make.size.mas_equalTo(CGSizeMake(SCREENWIDTH * 0.8, 20));
         }];
     }
     return self;
@@ -52,6 +56,29 @@
     [self.louzhuImageView downloadImage:headModel.icon place:[UIImage imageNamed:@"timeline_image_placeholder"]];
 }
 
+
+-(void)setHotList:(SQHotListModel *)hotList
+{
+    _hotList = hotList;
+    self.titleLabel.font = [UIFont systemFontOfSize:14];
+    self.titleLabel.text = hotList.title;
+    self.titleLabel.numberOfLines = 0;
+    
+    self.addtimeLabel.text = hotList.addtime_f;
+    
+    [self.louzhuImageView sd_setImageWithURL:[NSURL URLWithString:hotList.userinfo.icon] placeholderImage:Placholder];
+    
+    [self.fromButton setTitle:@"from: " forState:UIControlStateNormal];
+    [self.fromButton setTitleColor:RGB(55, 207, 16) forState:UIControlStateNormal];
+    
+    _louzhuLabel.layer.borderWidth = 0;
+    NSDictionary *att = @{
+                          NSForegroundColorAttributeName : [UIColor darkGrayColor],
+                          NSFontAttributeName : [UIFont systemFontOfSize:12]
+                          };
+    NSAttributedString *attri = [[NSAttributedString alloc] initWithString:hotList.userinfo.uname attributes:att];
+    self.louzhuLabel.attributedText = attri;
+}
 
 
 #pragma mark -

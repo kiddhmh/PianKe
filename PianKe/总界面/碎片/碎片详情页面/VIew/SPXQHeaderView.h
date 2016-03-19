@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 @class ListModel;
+
 @interface SPXQHeaderView : UIView
 
 @property (nonatomic,strong) ListModel *listModel;
+
 
 @end
