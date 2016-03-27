@@ -25,6 +25,7 @@
 #import "Masonry.h"
 #import "LoadingView.h"
 #import "WebViewController.h"
+#import "SYSecondViewController.h"
 
 @interface GoodPorductsViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 /**
@@ -268,8 +269,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    
+    list *model = self.listArray[indexPath.row];
+    SYSecondViewController *secondVC = [[SYSecondViewController alloc] init];
+    [secondVC deliverContentidWithString:model.contentid];
+    [self.navigationController pushViewController:secondVC animated:YES];
 }
 
 #pragma mark - 

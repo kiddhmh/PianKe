@@ -42,6 +42,6 @@
  */
 @property (nonatomic,assign) NSUInteger songid;
 
-
+@property (strong, nonatomic) NSString *contentid;
 
 @end

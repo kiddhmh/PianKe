@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A239D7301C9D25FA002EEE09 /* RadioThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A239D72F1C9D25FA002EEE09 /* RadioThirdViewController.m */; };
 		A239D7351C9D281A002EEE09 /* RadioMusicView.m in Sources */ = {isa = PBXBuildFile; fileRef = A239D7341C9D281A002EEE09 /* RadioMusicView.m */; };
+		A23C942A1C9FBF2B00955211 /* SYSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A23C94291C9FBF2B00955211 /* SYSecondViewController.m */; };
 		A264D4801C7FEE0D00E11066 /* HMHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A264D47F1C7FEE0D00E11066 /* HMHNavigationController.m */; };
 		A264D4871C7FEE2400E11066 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A264D4831C7FEE2400E11066 /* SettingsViewController.m */; };
 		A264D4881C7FEE2400E11066 /* ReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A264D4861C7FEE2400E11066 /* ReadingViewController.m */; };
@@ -214,6 +215,8 @@
 		A239D72F1C9D25FA002EEE09 /* RadioThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioThirdViewController.m; sourceTree = "<group>"; };
 		A239D7331C9D281A002EEE09 /* RadioMusicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioMusicView.h; sourceTree = "<group>"; };
 		A239D7341C9D281A002EEE09 /* RadioMusicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioMusicView.m; sourceTree = "<group>"; };
+		A23C94281C9FBF2B00955211 /* SYSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSecondViewController.h; sourceTree = "<group>"; };
+		A23C94291C9FBF2B00955211 /* SYSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSecondViewController.m; sourceTree = "<group>"; };
 		A24D729F1C8090A500FFB3CF /* PKPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKPrefixHeader.pch; sourceTree = "<group>"; };
 		A264D47E1C7FEE0D00E11066 /* HMHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHNavigationController.h; sourceTree = "<group>"; };
 		A264D47F1C7FEE0D00E11066 /* HMHNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHNavigationController.m; sourceTree = "<group>"; };
@@ -633,6 +636,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A23C94271C9FBF0700955211 /* 首页二级页面 */ = {
+			isa = PBXGroup;
+			children = (
+				A23C94281C9FBF2B00955211 /* SYSecondViewController.h */,
+				A23C94291C9FBF2B00955211 /* SYSecondViewController.m */,
+			);
+			path = "首页二级页面";
+			sourceTree = "<group>";
+		};
 		A24D729C1C808DBF00FFB3CF /* 其它 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1044,6 +1056,7 @@
 				A2F353E11C9AAD2E0068F647 /* Controllers */,
 				A275EDE81C8562DA00526612 /* Model */,
 				A275EDEB1C8562DA00526612 /* View */,
+				A23C94271C9FBF0700955211 /* 首页二级页面 */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -1805,6 +1818,7 @@
 				A26502F51C968B56003D0F23 /* RadioCarousel.m in Sources */,
 				A2BF8C051C8D177C00ED9C66 /* ListModel.m in Sources */,
 				A274516A1C7F1D9F009108B1 /* UIButton+WebCache.m in Sources */,
+				A23C942A1C9FBF2B00955211 /* SYSecondViewController.m in Sources */,
 				A275ED811C85455A00526612 /* NSString+Extension.m in Sources */,
 				A264D4881C7FEE2400E11066 /* ReadingViewController.m in Sources */,
 				A2754DD31C7E9907000B5CA0 /* AFHTTPRequestOperationManager.m in Sources */,

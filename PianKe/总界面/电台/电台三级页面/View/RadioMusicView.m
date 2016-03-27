@@ -35,6 +35,10 @@
 
 @property (nonatomic,strong) MusicView *musicView;
 
+@property (nonatomic,assign) CMTime currentTime;
+
+@property (nonatomic,strong) id observer;
+
 @end
 
 @implementation RadioMusicView
@@ -73,7 +77,7 @@
     }];
     
     [weakSelf.likeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.coverImageView.mas_left).offset(padding);
+        make.left.equalTo(weakSelf.coverImageView.mas_left).offset(padding/2);
         make.top.equalTo(weakSelf.titleLabel.mas_bottom).offset(padding);
         make.height.mas_equalTo(20);
         make.width.mas_equalTo(60);
@@ -81,23 +85,22 @@
     
     [weakSelf.commentBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.likeBtn.mas_top);
-        make.right.equalTo(weakSelf.coverImageView.mas_right).offset(-padding);
+        make.right.equalTo(weakSelf.coverImageView.mas_right);
         make.size.mas_equalTo(CGSizeMake(60,20));
     }];
     
     [weakSelf.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.likeBtn.mas_bottom).offset(padding);
         make.left.equalTo(weakSelf.likeBtn.mas_left);
-        make.right.equalTo(weakSelf.commentBtn.mas_right);
-        make.centerX.equalTo(weakSelf.mas_centerX);
+        make.centerX.equalTo(weakSelf.mas_centerX).offset(-padding / 2);
         make.height.mas_equalTo(3);
     }];
     
     [weakSelf.currentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.progressView.mas_right).offset(padding / 2);
+        make.left.equalTo(weakSelf.progressView.mas_right);
         make.centerY.equalTo(weakSelf.progressView.mas_centerY);
         make.height.mas_equalTo(padding / 2);
-        make.width.mas_equalTo(padding);
+        make.width.mas_equalTo(2 * padding);
     }];
     
 }
@@ -151,7 +154,7 @@
 {
     if (!_commentBtn) {
         _commentBtn = [[UIButton alloc] init];
-        _commentBtn.titleLabel.font = [UIFont systemFontOfSize:12];
+        _commentBtn.titleLabel.font = [UIFont systemFontOfSize:11];
         [_commentBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     }
     return _commentBtn;
@@ -161,7 +164,6 @@
 {
     if (!_progressView) {
         _progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
-        _progressView.trackTintColor = [UIColor groupTableViewBackgroundColor];
         _progressView.progressTintColor = [UIColor darkGrayColor];
     }
     return _progressView;
@@ -203,6 +205,44 @@
                                @"player" : self.player
                                };
         [[NSNotificationCenter defaultCenter] postNotificationName:MHDidPlayMusicNotification object:nil userInfo:info];
+        
+        
+        [self addobserver];
+    }
+}
+
+
+- (void)addobserver
+{
+    CMTime time = CMTimeMake(1.0, 1.0);
+    __weak typeof(self)weakSelf = self;
+    id timeObserver = [weakSelf.player addPeriodicTimeObserverForInterval:time queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
+        
+        //当前缓冲时间
+        NSInteger current = CMTimeGetSeconds(time);
+        //总的缓冲时间
+        NSInteger total = CMTimeGetSeconds(weakSelf.player.currentItem.duration);
+        if (current) {
+            weakSelf.progressView.progress = current * 1.0 / total;
+            if (current > 60) {
+                NSInteger minute = current / 60;
+                NSInteger second = current % 60;
+                weakSelf.currentLabel.text = [NSString stringWithFormat:@"02%ld:%02ld",minute, second];
+            } else{
+               weakSelf.currentLabel.text = [NSString stringWithFormat:@"00:%02ld",current];
+            }
+        }
+        self.currentTime = time;
+    }];
+    self.observer = timeObserver;
+}
+
+
+- (void)dealloc
+{
+    if (self.observer) {
+        [self.player removeTimeObserver:self.observer];
+        self.observer = nil;
     }
 }
 
